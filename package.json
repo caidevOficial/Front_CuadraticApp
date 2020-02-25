@@ -1,0 +1,26 @@
+{
+  "name": "cuadraticapp",
+  "version": "0.2.5",
+  "description": "WebApp para calcular mediante formula cuadratica.",
+  "main": "index.js",
+  "dependencies": {
+    "firebase": "^7.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "cuadapp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caidevOficial/CuadraticApp.git"
+  },
+  "keywords": [
+    "CuadraticApp"
+  ],
+  "author": "Caidev - FacuFalcone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caidevOficial/CuadraticApp/issues"
+  },
+  "homepage": "https://github.com/caidevOficial/CuadraticApp#readme"
+}
