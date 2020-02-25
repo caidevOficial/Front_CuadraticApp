@@ -63,6 +63,28 @@
   	<a class="MiBotonUTNnav" onclick="location.href='../index.html'" >Men&uacute; Principal</a>	
   	<p>WebApp para calcular la resolvente</p>
 </div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC-FaSSiPoEQC0oa5qyyjYQ4M35e-08tCY",
+    authDomain: "cuadraticapp.firebaseapp.com",
+    databaseURL: "https://cuadraticapp.firebaseio.com",
+    projectId: "cuadraticapp",
+    storageBucket: "cuadraticapp.appspot.com",
+    messagingSenderId: "966895829609",
+    appId: "1:966895829609:web:9c582c5f4b3622d97898f8",
+    measurementId: "G-K9G9QM3SG2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
 </body>
 </html>
