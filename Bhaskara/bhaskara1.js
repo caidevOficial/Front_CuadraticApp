@@ -18,9 +18,9 @@ var formulaCuadratica_x2;
 var solucion_x1;
 var solucion_x2;
 
-if ((terminoA && terminoB && terminoC) !=0){
+if (terminoA!=0){
 
-	determinante = parseFloat(Math.sqrt(((terminoB)**2) - 4*terminoA*terminoC));
+	determinante = parseFloat(Math.sqrt(((terminoB*terminoB) - (4*terminoA*terminoC)));
 	if (determinante >=0){
 		formulaCuadratica_x1 = ((-(terminoB))+determinante)/(2*terminoA);
 		formulaCuadratica_x2 =  ((-(terminoB))-determinante)/(2*terminoA);	
