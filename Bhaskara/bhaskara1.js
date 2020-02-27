@@ -20,14 +20,17 @@ var solucion_x2;
 if (terminoA!=0){
 
 	determinante = parseFloat(Math.sqrt(((terminoB*terminoB) - (4*terminoA*terminoC))));
-	if (determinante >=0){
+	if (determinante >= 0){
 		formulaCuadratica_x1 = ((-(terminoB))+determinante)/(2*terminoA);
 		formulaCuadratica_x2 =  ((-(terminoB))-determinante)/(2*terminoA);	
 	}
 	else{
-		alert("No tiene soluciónes reales ( raices imaginarias)");
+		alert("No tiene soluciónes reales - raices imaginarias");
 	}
 	
+}
+else {
+	alert("Si el termino A es 0, pretenderas dividir tambien por 0 y eso NO SE PUEDE!");
 }
 	solucion_x1 = formulaCuadratica_x1;
 	solucion_x2 = formulaCuadratica_x2;
@@ -80,4 +83,5 @@ if (terminoA!=0){
 /*function pooShenLoo(){
 
 
-}*/
+}
+*/
