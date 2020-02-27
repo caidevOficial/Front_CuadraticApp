@@ -26,7 +26,7 @@ if (terminoA!=0){
 		formulaCuadratica_x2 =  ((-(terminoB))-determinante)/(2*terminoA);	
 	}
 	else{
-		alert("No tiene solución");
+		alert("No tiene soluciónes reales ( raices imaginarias)");
 	}
 	
 }
