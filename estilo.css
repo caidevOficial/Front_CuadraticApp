@@ -47,36 +47,36 @@ img {
 .menu li {
   background-color: #f50056; /*rojo*/
 }
-.menu .MiBotonUTNMenuInicioParaParcial{ 
+.menu .BotonCambioDePagina{ 
   background-color: #f50056 !important; /*rojo*/
    
 }
 
-.menu .MiBotonUTNMenuInicioParaParcial:hover {
+.menu .BotonCambioDePagina:hover {
   background-color: #ab003c !important; /*rojo oscuro*/
 }
-.menu .MiBotonUTNMenuInicioNoParcial{ 
+.menu .BotonEspecial{ 
   background-color: #b300db !important; /*violeta*/
    cursor: pointer;
 }
-.menu .MiBotonUTNMenuInicioNoParcial:hover {
+.menu .BotonEspecial:hover {
   background-color: #75008f !important; /*violeta oscuro*/
 }
-.menu .MiBotonUTNMenuEjercicios:hover{
+.menu .Boton-Degradado:hover{
  background: #1e5799; /* Old browsers */
-background: -moz-linear-gradient(45deg, #1e5799 0%, #2989d8 16%, #2989d8 16%, #ffffff 36%, #ffffff 43%, #ebf709 48%, #ffffff 52%, #ffffff 61%, #207cca 82%, #207cca 99%, #207cca 99%, #7db9e8 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#1e5799), color-stop(16%,#2989d8), color-stop(16%,#2989d8), color-stop(36%,#ffffff), color-stop(43%,#ffffff), color-stop(48%,#ebf709), color-stop(52%,#ffffff), color-stop(61%,#ffffff), color-stop(82%,#207cca), color-stop(99%,#207cca), color-stop(99%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(45deg, #1e5799 0%,#2989d8 16%,#2989d8 16%,#ffffff 36%,#ffffff 43%,#ebf709 48%,#ffffff 52%,#ffffff 61%,#207cca 82%,#207cca 99%,#207cca 99%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(45deg, #1e5799 0%,#2989d8 16%,#2989d8 16%,#ffffff 36%,#ffffff 43%,#ebf709 48%,#ffffff 52%,#ffffff 61%,#207cca 82%,#207cca 99%,#207cca 99%,#7db9e8 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(45deg, #1e5799 0%,#2989d8 16%,#2989d8 16%,#ffffff 36%,#ffffff 43%,#ebf709 48%,#ffffff 52%,#ffffff 61%,#207cca 82%,#207cca 99%,#207cca 99%,#7db9e8 100%); /* IE10+ */
-background: linear-gradient(45deg, #1e5799 0%,#2989d8 16%,#2989d8 16%,#ffffff 36%,#ffffff 43%,#ebf709 48%,#ffffff 52%,#ffffff 61%,#207cca 82%,#207cca 99%,#207cca 99%,#7db9e8 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+/**background: -moz-linear-gradient(45deg, #1e5799 0%, #2989d8 16%, #2989d8 16%, #ffffff 36%, #ffffff 43%, #ebf709 48%, #ffffff 52%, #ffffff 61%, #207cca 82%, #207cca 99%, #207cca 99%, #7db9e8 100%); /* FF3.6+ */
+/**background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#1e5799), color-stop(16%,#2989d8), color-stop(16%,#2989d8), color-stop(36%,#ffffff), color-stop(43%,#ffffff), color-stop(48%,#ebf709), color-stop(52%,#ffffff), color-stop(61%,#ffffff), color-stop(82%,#207cca), color-stop(99%,#207cca), color-stop(99%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+/**background: -webkit-linear-gradient(45deg, #1e5799 0%,#2989d8 16%,#2989d8 16%,#ffffff 36%,#ffffff 43%,#ebf709 48%,#ffffff 52%,#ffffff 61%,#207cca 82%,#207cca 99%,#207cca 99%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+/**background: -o-linear-gradient(45deg, #1e5799 0%,#2989d8 16%,#2989d8 16%,#ffffff 36%,#ffffff 43%,#ebf709 48%,#ffffff 52%,#ffffff 61%,#207cca 82%,#207cca 99%,#207cca 99%,#7db9e8 100%); /* Opera 11.10+ */
+/**background: -ms-linear-gradient(45deg, #1e5799 0%,#2989d8 16%,#2989d8 16%,#ffffff 36%,#ffffff 43%,#ebf709 48%,#ffffff 52%,#ffffff 61%,#207cca 82%,#207cca 99%,#207cca 99%,#7db9e8 100%); /* IE10+ */
+/**background: linear-gradient(45deg, #1e5799 0%,#2989d8 16%,#2989d8 16%,#ffffff 36%,#ffffff 43%,#ebf709 48%,#ffffff 52%,#ffffff 61%,#207cca 82%,#207cca 99%,#207cca 99%,#7db9e8 100%); /* W3C */
+/**filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 color:black;
 }
 
 
 
-.MiBotonUTNnav {
+.Boton-nav {
   
   /*text-transform: capitalize;*/
   border:hidden;
@@ -96,7 +96,7 @@ color:black;
   -webkit-transition:background .3s;
 }
 
-.MiBotonUTNnav:hover{
+.Boton-nav:hover{
   background:#ab003c;
 }
 
@@ -120,7 +120,7 @@ color:black;
   padding: 15px;
 }
 
-/* For mobile phones: */
+/* Responsive Mobile: */
 [class*="col-"] {
   width: 100%;
 }
@@ -158,7 +158,7 @@ color:black;
 
 
 
-//aca el viejo
+// Modificar
 
 * {
   margin:0;
@@ -238,7 +238,7 @@ left:0px;
   -webkit-transition:opacity 1s;
 }
 
-#FormIngreso {
+#InputBox {
   
  background-color: #3c3c3c;
   padding:6% 4%;
@@ -266,7 +266,7 @@ select{
 }
 
 
-.MiBotonUTN {
+.BotonEspecial- {
   display:block;
   /*text-transform: capitalize;*/
   border:hidden;
@@ -286,10 +286,10 @@ select{
   -webkit-transition:background .3s;
 }
 
-.MiBotonUTN:hover{
+.BotonEspecial-:hover{
   background:#1BA045;
 }
-.MiBotonUTNJuego {
+.BotonEspecial-Juego {
   
   /*text-transform: capitalize;*/
   border:hidden;
@@ -308,7 +308,7 @@ select{
   transition:background .3s;
   -webkit-transition:background .3s;
 }
-.MiBotonUTNMenu {
+.BotonEspecial-Menu {
   display:block;
   /*text-transform: capitalize;*/
   border:hidden;
@@ -327,7 +327,7 @@ select{
   -webkit-transition:background .3s;
 }
 
-.MiBotonUTNMenu:hover{
+.BotonEspecial-Menu:hover{
  background: #1e5799; /* Old browsers */
 background: -moz-linear-gradient(45deg, #1e5799 0%, #2989d8 16%, #2989d8 16%, #ffffff 36%, #ffffff 43%, #ebf709 48%, #ffffff 52%, #ffffff 61%, #207cca 82%, #207cca 99%, #207cca 99%, #7db9e8 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#1e5799), color-stop(16%,#2989d8), color-stop(16%,#2989d8), color-stop(36%,#ffffff), color-stop(43%,#ffffff), color-stop(48%,#ebf709), color-stop(52%,#ffffff), color-stop(61%,#ffffff), color-stop(82%,#207cca), color-stop(99%,#207cca), color-stop(99%,#207cca), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
@@ -339,7 +339,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', end
 color:black;
 }
 
-.MiBotonUTNLinea{
+.BotonEspecial-Linea{
   max-width: 150px;
 position: absolute;
   /*text-transform: capitalize;*/
@@ -359,12 +359,12 @@ position: absolute;
   transition:background .3s;
   -webkit-transition:background .3s;
 }
-.MiBotonUTNLinea:hover{
+.BotonEspecial-Linea:hover{
   background:red;
   /*text-transform: uppercase;*/
 }
 
-.menu li  .MiBotonUTNMenuInicio {
+.menu li  .BotonEspecial-MenuInicio {
   display:block;
  
   border:hidden;
@@ -382,11 +382,11 @@ position: absolute;
   transition:background .3s;
   -webkit-transition:background .3s;
 }
-.menu li .MiBotonUTNMenuInicio:hover{
+.menu li .BotonEspecial-MenuInicio:hover{
   background:#4a4a71 !important;
 }
 
-.MiBotonUTNMenuInicioParcial {
+.BotonEspecial-MenuInicioParcial {
   display:block;
  
   border:hidden;
@@ -404,7 +404,7 @@ position: absolute;
   transition:background .3s;
   -webkit-transition:background .3s;
 }
-.MiBotonUTNMenuInicioParcial:hover{
+.BotonEspecial-MenuInicioParcial:hover{
   background:green;
 }
 
@@ -438,7 +438,7 @@ position: absolute;
 
 }
 
-/* solo para github fork me*/
+/* sector GitHub Fork*/
  .github-fork-ribbon {
   /* The right and left classes determine the side we attach our banner to */
   position: absolute;
