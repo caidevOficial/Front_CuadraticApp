@@ -1,104 +1,118 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Resolvente mediante Bhaskara</title>
 
-		<!--Estilos-->
-		<link rel="stylesheet" type="text/css" href="../estilo.css">
-		<link rel="stylesheet" type="text/css" href="../animacion.css">
-		<!--final de Estilos-->
+<head>
+	<meta charset="utf-8" />
+	<title>Resolvente mediante Bhaskara</title>
 
-		<!--Lógica-Programación-->
-		<script type="text/javascript" src="bhaskara1.js"></script>
-        <!--Final de Lógica-Programación -->
+	<!--Estilos-->
+	<link rel="stylesheet" type="text/css" href="../estilo.css" />
+	<link rel="stylesheet" type="text/css" href="../animacion.css" />
+	<!--final de Estilos-->
 
-        <!--Validar que el input solo sean numeros -->
-		<script>
-			function soloNumeros(e){
-				key=e.keyCode || e.which;
-				teclado = String.fromCharCode(key);
-				numeros="0123456789-";
-				especiales="8-37-38-46";//array
-				teclado_especial = false;
+	<!--Lógica-Programación-->
+	<script type="text/javascript" src="bhaskara1.js"></script>
+	<!--Final de Lógica-Programación -->
 
-				for (var i in especiales){
-					if (key==especiales[i]){
-						teclado_especial = true;
-					}
-				}
-				if((numeros.indexOf(teclado)==-1) && (!teclado_especial)){
-					return false;
+	<!--Validar que el input solo sean numeros -->
+	<script>
+		function soloNumeros(e) {
+			key = e.keyCode || e.which;
+			teclado = String.fromCharCode(key);
+			numeros = "0123456789-";
+			especiales = "8-37-38-46"; //array
+			teclado_especial = false;
 
+			for (var i in especiales) {
+				if (key == especiales[i]) {
+					teclado_especial = true;
 				}
 			}
-		</script>
-		<!--Final de Lógica-Programación -->
-		
-			
-<link rel="icon" type="image/x-icon" href="../taiIcono.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-	<body>
+			if (numeros.indexOf(teclado) == -1 && !teclado_especial) {
+				return false;
+			}
+		}
+	</script>
+	<!--Final de Lógica-Programación -->
 
+	<link rel="icon" type="image/x-icon" href="../taiIcono.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
 
-<div class=" animated bounceIn header">
-    
+<body>
+	<div class="animated bounceIn header">
+		<center>
+			<h5>Resolvente <strong> Mediante Bhaskara</strong></h5>
+		</center>
+		<a class="Boton-nav" onclick="location.href='index.html'"><i class="far fa-hand-point-left"></i>Men&uacute;
+			Bhaskara</a>
+	</div>
 
-     <center><h5>Resolvente <strong> Mediante Bhaskara</strong> </h5></center> 
-   <a  class="Boton-nav" onclick="location.href='index.html'" ><i class="far fa-hand-point-left"></i>Men&uacute; Bhaskara</a> 
+	<div class="row">
+		<div class="col-3 col-s-3 menu"></div>
 
-</div>
+		<div class="col-6 col-s-9">
+			<form id="InputBox" class="animated bounceInLeft" class="animated bounceInLeft"
+				class="animated bounceInLeft">
+				<h1>Mandale Bhaskara!</h1>
+				<input type="text"
+					placeholder="termino Cuadr&aacute;tico (Ax**2) <- NO PONER LA X, solo el coeficiente que la acompaña con su signo"
+					onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoA" />
+				<input type="text"
+					placeholder="Termino Lineal (Bx) <- NO PONER LA X, solo el coeficiente que la acompaña con su signo"
+					onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoB" />
+				<input type="text"
+					placeholder="Termino Independiente (C) <- colocar el termino C con su respectivo signo"
+					onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoC" />
+				<br />
 
-<div class="row">
-  <div class="col-3 col-s-3 menu">
-   
-  </div>
+				<a class="Boton-nav" onclick="bhaskara()">Mandale Bhaskara! - By Caidev</a>
+				<br />
+			</form>
+			<form id="InputBox" class="animated bounceInLeft" class="animated bounceInLeft"
+				class="animated bounceInLeft">
+				<h1>Soluciones de X1 y X2!</h1>
+				<h2>X1 =</h2>
+				<input type="text" placeholder="Resultado de X1" id="x1" /><br />
+				<h2>X2 =</h2>
+				<input type="text" placeholder="Resultado de X2" id="x2" />
+				<br />
+				<br />
+			</form>
+		</div>
 
-  <div class="col-6 col-s-9">
-  	<form id="InputBox" class=" animated bounceInLeft" class=" animated bounceInLeft"class=" animated bounceInLeft">
-	   <h1>Mandale Bhaskara!</h1>
-	 			<input type="text"  placeholder="termino Cuadr&aacute;tico (Ax**2) <- NO PONER LA X, solo el coeficiente que la acompaña con su signo" onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoA">
-				<input type="text"  placeholder="Termino Lineal (Bx) <- NO PONER LA X, solo el coeficiente que la acompaña con su signo" onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoB">
-				<input type="text"  placeholder="Termino Independiente (C) <- colocar el termino C con su respectivo signo" onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoC">
-				<br>
-				
-				  	<a  class="Boton-nav" onclick="bhaskara()" >Mandale Bhaskara! - By Caidev</a>
-				  	<br>  	
-	 </form>	
-	<form id="InputBox" class=" animated bounceInLeft" class=" animated bounceInLeft"class=" animated bounceInLeft">
-	   <h1>Soluciones de X1 y X2!</h1>
-	 			<h2>X1 = </h2><input type="text"  placeholder="Resultado de X1" id="x1"><br>
-				<h2>X2 = </h2><input type="text"  placeholder="Resultado de X2" id="x2">
-				<br>
-				  	<br>	  	
-	 </form>	
-  </div>
-
-  <div class="col-3 col-s-12">
-    <div class="aside animated bounceInUp">
-    		<h2>Condiciones:</h2>
+		<div class="col-3 col-s-12">
+			<div class="aside animated bounceInUp">
+				<h1>Condiciones:</h1>
+				<h2>
+					1. Para el correcto funcionamiento del c&oacute;digo:<br />
+				</h2>
 				<h3>
-					1.	Para el correcto funcionamiento del c&oacute;digo:
-						<br>A.	 Colocar los t&eacute;rminos A, B y C en el casillero correspondiente, por ejemplo si la formula fuese -2x**2+25x-4 : entenderemos que el T&eacute;rmino A es -2, el T&eacute;rmino B es 25 y el T&eacute;rmino C es -4 (siempre respetar el signo para que la ecuacion de correctamente.
-						<br>B. Cebate un mate.
-						<br>C. Dale like a mi GIT ;) .
-
-
-
+					[A] Colocar los t&eacute;rminos A, B y C en el casillero
+					correspondiente, por ejemplo si la formula fuese -2x**2+25x-4 :
+					entenderemos que el T&eacute;rmino A es -2, el T&eacute;rmino B es
+					25 y el T&eacute;rmino C es -4 (siempre respetar el signo para que
+					la ecuacion de correctamente.<br />
+					[B] Dale like a mi GIT ;) .<br />
+					[C] podes invitarme un cafecito dando clic en el boton de abajo y te lo voy a agradecer de coraz&oacute;n.<br />
 				</h3>
-			
-			
-    </div>
-  </div>
-</div>
+				 <!-- Sale un cafecito ;) -->
+				 <a href='https://cafecito.app/caidevoficial' rel='noopener' target='_blank'><img
+					srcset='https://cdn.cafecito.app/imgs/buttons/button_2.png 1x, https://cdn.cafecito.app/imgs/buttons/button_2_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_2_3.75x.png 3.75x'
+					src='https://cdn.cafecito.app/imgs/buttons/button_2.png' alt='Invitame un café en cafecito.app' /></a>
+		
+			</div>
+		</div>
+	</div>
 
-<div class="footer">
-  
-  	<!--a class="Boton-nav" onclick="location.href='../index.html'" ><i class="fas fa-bars"></i>Men&uacute; Principal</a-->	
-  	<p>WebApp para calcular la resolvente</p><br>
-  	<h1><p>By Caidev - FacuFalcone</p></h1>
-</div>
-
+	<div class="footer">
+		<!--a class="Boton-nav" onclick="location.href='../index.html'" ><i class="fas fa-bars"></i>Men&uacute; Principal</a-->
+		<p>WebApp para calcular la resolvente</p>
+		<br />
+		<h1>
+			<p>By Caidev - FacuFalcone</p>
+		</h1>
+	</div>
 </body>
+
 </html>
