@@ -1,91 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  <meta charset="utf-8">
+  <title>CuadraticApp</title>
+  <link rel="icon" type="image/x-icon" href="taiIcono.png">
+  <!--Estilos-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" type="text/css" href="animacion.css">
+  <!--final de Estilos-->
+  <style></style>
 </head>
-
-	<head>
-		<meta charset="utf-8">
-		<title>CuadraticApp</title>
-		<link rel="icon" type="image/x-icon" href="taiIcono.png">
-
-		<!--Estilos-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<link rel="stylesheet" type="text/css" href="estilo.css">
-		<link rel="stylesheet" type="text/css" href="animacion.css">
-		<!--final de Estilos-->
-
- <style>
-
-
-    </style>
-	</head>
 <body>
-      <!-- TOP RIGHT RIBBON: START COPYING HERE -->
-      <div class="github-fork-ribbon-wrapper right">
-          <div class="github-fork-ribbon">
-              <a href="https://github.com/caidevOficial/cuadraticApp" target="_blank" >Fork me on GitHub</a>
-          </div>
-      </div>
-
-<div class=" animated bounceIn header">
-  <center><h1>#CuadraticApp!</h1><p>Formulas Cuadraticas <strong> JS</strong> </p></center>
-</div>
-
-<div class="row">
-  <div class="col-3 col-s-3 menu">
-    <ul>
-      <li class="BotonCambioDePagina" onclick="location.href='Bhaskara/index.html'" >Resolvente de Bhaskara</li>
-      <!-- <li class="BotonCambioDePagina" onclick="location.href='Po-shen_loh/index.html'" >Resolvente de Po-Shen Loh</li> -->
-      
-       <li class="BotonEspecial"     ><a  href='http://www.w3schools.com/js/default.asp'  target="_blank" style="color :white" >W3School</a></li>
-    </ul>
-  </div>
-
-  <div class="col-6 col-s-9">
-   	<center><img src="formulaCuadratica.jpg" style="overflow: scroll;"></center>
-  </div>
-
-  <div class="col-3 col-s-12">
-    <div class="aside animated bounceInUp">
-      <h2>Objetivos</h2>
-      <ul>
-      	<li>Resolver teniendo los 3 terminos completos  </li>
-      	<li>Buscar las dos soluciones  </li>
-      	<li>Ahorrar tiempo </li>
-      	<li>Salvar un arbol ?)</li>
-      </ul>
-     
+  <!-- TOP RIGHT RIBBON: START COPYING HERE -->
+  <div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/caidevOficial/cuadraticApp" target="_blank">Fork me on GitHub</a>
     </div>
   </div>
-</div>
 
-<div class="footer">
-  <p>WebApp para calcular la resolvente</p>
-</div>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+  <div class=" animated bounceIn header">
+    <center>
+      <h1>#CuadraticApp!</h1>
+      <p>Resolvente de Bhaskara - by<strong> FacuFalcone</strong></p>
+    </center>
+  </div>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+  <div class="row">
+    <div class="col-3 col-s-3 menu">
+      <ul>
+        <li class="BotonCambioDePagina" onclick="location.href='Bhaskara/index.html'">Calcular mediante Bhaskara</li>
+        <!-- <li class="BotonCambioDePagina" onclick="location.href='Po-shen_loh/index.html'" >Resolvente de Po-Shen Loh</li> -->
+
+        <li class="BotonEspecial"><a href='http://www.w3schools.com/js/default.asp' target="_blank"
+            style="color :white">Ir a W3School</a></li>
+      </ul>
+    </div>
+
+    <div class="col-6 col-s-9">
+      <center><img src="formulaCuadratica.jpg" style="overflow: scroll;"></center>
+    </div>
+
+    <div class="col-3 col-s-12">
+      <div class="aside animated bounceInUp">
+        <h2>Objetivos</h2>
+        <ul>
+          <li>Resolver teniendo los 3 terminos completos </li>
+          <li>Hallar dos soluciones a X</li>
+          <li>Ahorrar tiempo </li>
+          <li>Salvar un arbol ?)</li>
+          <li>Invitarme un cafecito ^^</li>
+        </ul>
+        <!-- Sale un cafecito ;) -->
+				 <a href='https://cafecito.app/caidevoficial' rel='noopener' target='_blank'><img
+					srcset='https://cdn.cafecito.app/imgs/buttons/button_2.png 1x, https://cdn.cafecito.app/imgs/buttons/button_2_2x.png 2x, https://cdn.cafecito.app/imgs/buttons/button_2_3.75x.png 3.75x'
+					src='https://cdn.cafecito.app/imgs/buttons/button_2.png' alt='Invitame un café en cafecito.app' /></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>WebApp para calcular la resolvente</p>
+  </div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
 
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyC-FaSSiPoEQC0oa5qyyjYQ4M35e-08tCY",
-    authDomain: "cuadraticapp.firebaseapp.com",
-    databaseURL: "https://cuadraticapp.firebaseio.com",
-    projectId: "cuadraticapp",
-    storageBucket: "cuadraticapp.appspot.com",
-    messagingSenderId: "966895829609",
-    appId: "1:966895829609:web:9c582c5f4b3622d97898f8",
-    measurementId: "G-K9G9QM3SG2"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyC-FaSSiPoEQC0oa5qyyjYQ4M35e-08tCY",
+      authDomain: "cuadraticapp.firebaseapp.com",
+      databaseURL: "https://cuadraticapp.firebaseio.com",
+      projectId: "cuadraticapp",
+      storageBucket: "cuadraticapp.appspot.com",
+      messagingSenderId: "966895829609",
+      appId: "1:966895829609:web:9c582c5f4b3622d97898f8",
+      measurementId: "G-K9G9QM3SG2"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </body>
+
 </html>
