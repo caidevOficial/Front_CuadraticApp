@@ -39,6 +39,13 @@ function bhaskara() {
       //Obtengo los vertices.
       Xvertice = (-(terminoB)) / (2 * (terminoA));
       Yvertice = (terminoA * (Math.pow(Xvertice, 2))) + (terminoB * Xvertice) + terminoC;
+
+      //Caracteristicas de las parabolas, Imprimo un alert segun Termino Cuadratico.
+      if (terminoA > 0) {
+        alert("La parabola tiende a +Infinito");
+      } else {
+        alert("La parabola tiende a -Infinito");
+      }
     }
     // si el determinante es negativo, imprimo mensaje de error.
     else {
@@ -47,13 +54,6 @@ function bhaskara() {
       Xvertice = "Error al hallar";
       Yvertice = "Error al hallar";
       alert("No tiene soluciónes reales - raices imaginarias");
-    }
-
-    //Caracteristicas de las parabolas, Imprimo un alert segun Termino Cuadratico.
-    if (terminoA > 0) {
-      alert("La parabola tiende a +Infinito");
-    } else {
-      alert("La parabola tiende a -Infinito");
     }
   }
 
