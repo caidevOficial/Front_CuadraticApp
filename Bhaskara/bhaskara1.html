@@ -52,50 +52,53 @@
 		<div class="col-3 col-s-3 menu"></div>
 
 		<div class="col-6 col-s-9">
-			<form id="InputBox" class="animated bounceInLeft" class="animated bounceInLeft"
-				class="animated bounceInLeft">
-				<div align="center">
-					<h1>Mandale Bhaskara!</h1>
-					<h5>NO PONER LA X, solo el coeficiente que la acompaña con su signo</h5>
-					<h2>A = <input type="text" placeholder="Termino Cuadr&aacute;tico (Ax^2)"
-							onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoA" />
-					</h2>
-					<h5>NO PONER LA X, solo el coeficiente que la acompaña con su signo</h5>
-					<h2>B = <input type="text" placeholder="Termino Lineal (Bx)" onkeypress="return soloNumeros(event)"
-							onpaste="return false" id="terminoB" />
-					</h2>
-					<h5>Colocar el termino C con su respectivo signo</h5>
-					<h2>C = <input type="text" placeholder="Termino Independiente (C)"
-							onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoC" />
-					</h2>
-					<br />
-					<a class="Boton-nav" onclick="bhaskara()">Mandale Bhaskara! - By Caidev</a>
-					<br />
-				</div>
-			</form>
-			<form id="InputBox" class="animated bounceInLeft" class="animated bounceInLeft"
-				class="animated bounceInLeft">
-				<div align="center">
-					<h1>Soluciones de X1 y X2!</h1>
-					<h2>
-						X1 = <input type="text" placeholder="Resultado de X1" id="x1" />
-					</h2>
-					<h2>
-						X2 = <input type="text" placeholder="Resultado de X2" id="x2" />
-					</h2>
-					<h2>
-						Xv =
-						<input type="text" placeholder="V&eacute;rtice X" id="Xvertice" />
-					</h2>
-					<h2>
-						Yv =
-						<input type="text" placeholder="V&eacute;rtice Y" id="Yvertice" />
-					</h2>
-					<br />
-				</div>
-			</form>
+			<fieldset>
+				<form id="InputBox" class="animated bounceInLeft" class="animated bounceInLeft"
+					class="animated bounceInLeft">
+					<div align="center">
+						<h1>Mandale Bhaskara!</h1>
+						<h5>NO PONER LA X, solo el coeficiente que la acompaña con su signo</h5>
+						<h2>A = <input type="text" placeholder="Ax^2" onkeypress="return soloNumeros(event)"
+								onpaste="return false" id="terminoA" />
+						</h2>
+						<h5>NO PONER LA X, solo el coeficiente que la acompaña con su signo</h5>
+						<h2>B = <input type="text" placeholder="Bx" onkeypress="return soloNumeros(event)"
+								onpaste="return false" id="terminoB" />
+						</h2>
+						<h5>Colocar el termino C con su respectivo signo</h5>
+						<h2>C = <input type="text" placeholder="C" onkeypress="return soloNumeros(event)"
+								onpaste="return false" id="terminoC" />
+						</h2>
+						<br />
+						<a class="Boton-nav" onclick="bhaskara()">Mandale Bhaskara! - By Caidev</a>
+						<br />
+					</div>
+				</form>
+			</fieldset>
+			<fieldset>
+				<form id="InputBox" class="animated bounceInLeft" class="animated bounceInLeft"
+					class="animated bounceInLeft">
+					<div align="center">
+						<h1>Soluciones de X1 y X2!</h1>
+						<h2>
+							X1 = <input type="textResul" placeholder="Resultado de X1" id="x1" />
+						</h2>
+						<h2>
+							X2 = <input type="textResul" placeholder="Resultado de X2" id="x2" />
+						</h2>
+						<h2>
+							Xv =
+							<input type="textResul" placeholder="V&eacute;rtice" id="Xvertice" />
+						</h2>
+						<h2>
+							Yv =
+							<input type="textResul" placeholder="V&eacute;rtice" id="Yvertice" />
+						</h2>
+						<br />
+					</div>
+				</form>
 		</div>
-
+		</fieldset>
 		<div class="col-3 col-s-12">
 			<div class="aside animated bounceInUp">
 				<h1>Condiciones:</h1>
@@ -111,11 +114,12 @@
 					lo voy a agradecer de coraz&oacute;n.<br />
 				</h3>
 				<!-- Sale un cafecito ;) -->
-				<a href="https://cafecito.app/caidevoficial" rel="noopener" target="_blank"><img srcset="
-                https://cdn.cafecito.app/imgs/buttons/button_2.png       1x,
-                https://cdn.cafecito.app/imgs/buttons/button_2_2x.png    2x,
-                https://cdn.cafecito.app/imgs/buttons/button_2_3.75x.png 3.75x
-              " src="https://cdn.cafecito.app/imgs/buttons/button_2.png" alt="Invitame un café en cafecito.app" /></a>
+				<a href='https://cafecito.app/caidevoficial' rel='noopener' target='_blank'>
+					<img srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, 
+					https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, 
+					https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x'
+						src='https://cdn.cafecito.app/imgs/buttons/button_6.png'
+						alt='Invitame un café en cafecito.app' /></a>
 			</div>
 		</div>
 	</div>
