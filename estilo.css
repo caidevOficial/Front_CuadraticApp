@@ -1,6 +1,5 @@
 @import url("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
 
-
 * {
   box-sizing: border-box;
 }
@@ -22,7 +21,6 @@ html {
 
 .header {
   background-color: rgb(60, 60, 60);
-  ;
   color: #ffffff;
   /*color letra*/
   padding: 15px;
@@ -50,19 +48,19 @@ img {
 }
 
 .menu li {
-  background-color: #f50056;
-  /*rojo*/
+  background-color: #00a1f5;
+  /*celeste*/
 }
 
 .menu .BotonCambioDePagina {
-  background-color: #f50056 !important;
-  /*rojo*/
-
+  background-color: #00a1f5 !important;
+  /*celeste*/
 }
 
+/* Mas oscuro Al posicionar el mouse */
 .menu .BotonCambioDePagina:hover {
-  background-color: #ab003c !important;
-  /*rojo oscuro*/
+  background-color: #0073b1 !important;
+  /*azul oscuro*/
 }
 
 .menu .BotonEspecial {
@@ -71,6 +69,7 @@ img {
   cursor: pointer;
 }
 
+/* Mas oscuro Al posicionar el mouse */
 .menu .BotonEspecial:hover {
   background-color: #75008f !important;
   /*violeta oscuro*/
@@ -89,14 +88,11 @@ img {
   color: black;
 }
 
-
-
 .Boton-nav {
-
   /*text-transform: capitalize;*/
   border: hidden;
   width: 100%;
-  background: #f50056;
+  background: #00a1f5;
   margin: 0 auto;
   margin-top: 1%;
   padding: 10px;
@@ -107,12 +103,13 @@ img {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
-  transition: background .3s;
-  -webkit-transition: background .3s;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
 }
 
+/* Mas oscuro al posicionar el mouse */
 .Boton-nav:hover {
-  background: #ab003c;
+  background: #0073b1;
 }
 
 .aside {
@@ -142,7 +139,6 @@ img {
 }
 
 @media only screen and (min-width: 600px) {
-
   /* For tablets: */
   .col-s-1 {
     width: 8.33%;
@@ -194,7 +190,6 @@ img {
 }
 
 @media only screen and (min-width: 768px) {
-
   /* For desktop: */
   .col-1 {
     width: 8.33%;
@@ -245,8 +240,6 @@ img {
   }
 }
 
-
-
 // Modificar
 
 * {
@@ -258,7 +251,7 @@ body {
   margin: 0 auto;
   color: #f0f0f0;
   background: #2e2e2e;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 caption {
@@ -268,7 +261,6 @@ caption {
 }
 
 .CajaUno {
-
   max-width: 30%;
   width: 400px;
   margin: 0 auto;
@@ -306,7 +298,6 @@ caption {
 
 .CajaInicio h1 {
   background: rgb(14, 26, 112);
-  ;
   padding: 20px 0;
   font-size: 140%;
   font-weight: 300;
@@ -333,21 +324,41 @@ caption {
 }
 
 #InputBox {
-
   background-color: #3c3c3c;
   padding: 6% 4%;
 }
 
+/* this!*/
 input[type="text"] {
-  width: 70%;
-
+  width: 25%;
   background: #fff;
-  margin-bottom: 4%;
+  color: #555;
+  margin-bottom: 1px;
+  padding: 7px; /* El alto del box */
+  padding-left: 1rem; /* Para mover el texto del box */
+  font-family: "Open Sans", sans-serif;
+  font-size: 120%;
+  border-radius: 1.5rem;
   border: 1px solid #ccc;
-  padding: 3%;
-  font-family: 'Open Sans', sans-serif;
+}
+
+input[type="textResul"] {
+  width: 60%;
+  background: #fff;
+  margin-bottom: 1px;
+  border: 1px solid #ccc;
+  padding: 7px; /* El alto del box */
+  padding-left: 1rem; /* Para mover el texto del box */
+  font-family: "Open Sans", sans-serif;
   font-size: 120%;
   color: #555;
+  border-radius: 1.5rem;
+}
+
+/* Para el formInput */
+fieldset {
+  width: 40rem;
+  border-color: #00a1f5;
 }
 
 select {
@@ -356,18 +367,17 @@ select {
   margin-bottom: 4%;
   border: 1px solid #ccc;
   padding: 4%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 95%;
   color: #555;
 }
-
 
 .BotonEspecial- {
   display: block;
   /*text-transform: capitalize;*/
   border: hidden;
   width: 100%;
-  background: #f50056;
+  background: #00a1f5;
   margin: 0 auto;
   margin-top: 1%;
   padding: 10px;
@@ -378,20 +388,19 @@ select {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
-  transition: background .3s;
-  -webkit-transition: background .3s;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
 }
 
 .BotonEspecial-:hover {
-  background: #1BA045;
+  background: #1ba045;
 }
 
 .BotonEspecial-Juego {
-
   /*text-transform: capitalize;*/
   border: hidden;
   width: 32%;
-  background: #f50056;
+  background: #00a1f5;
   margin: 0 auto;
   margin-top: 1%;
   padding: 10px;
@@ -402,8 +411,8 @@ select {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
-  transition: background .3s;
-  -webkit-transition: background .3s;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
 }
 
 .BotonEspecial-Menu {
@@ -411,7 +420,7 @@ select {
   /*text-transform: capitalize;*/
   border: hidden;
   width: 100px;
-  background: #f50056;
+  background: #00a1f5;
   margin-top: 1%;
   padding: 6px;
   text-align: center;
@@ -421,24 +430,110 @@ select {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
-  transition: background .3s;
-  -webkit-transition: background .3s;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
 }
 
 .BotonEspecial-Menu:hover {
   background: #1e5799;
   /* Old browsers */
-  background: -moz-linear-gradient(45deg, #1e5799 0%, #2989d8 16%, #2989d8 16%, #ffffff 36%, #ffffff 43%, #ebf709 48%, #ffffff 52%, #ffffff 61%, #207cca 82%, #207cca 99%, #207cca 99%, #7db9e8 100%);
+  background: -moz-linear-gradient(
+    45deg,
+    #1e5799 0%,
+    #2989d8 16%,
+    #2989d8 16%,
+    #ffffff 36%,
+    #ffffff 43%,
+    #ebf709 48%,
+    #ffffff 52%,
+    #ffffff 61%,
+    #207cca 82%,
+    #207cca 99%,
+    #207cca 99%,
+    #7db9e8 100%
+  );
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #1e5799), color-stop(16%, #2989d8), color-stop(16%, #2989d8), color-stop(36%, #ffffff), color-stop(43%, #ffffff), color-stop(48%, #ebf709), color-stop(52%, #ffffff), color-stop(61%, #ffffff), color-stop(82%, #207cca), color-stop(99%, #207cca), color-stop(99%, #207cca), color-stop(100%, #7db9e8));
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    color-stop(0%, #1e5799),
+    color-stop(16%, #2989d8),
+    color-stop(16%, #2989d8),
+    color-stop(36%, #ffffff),
+    color-stop(43%, #ffffff),
+    color-stop(48%, #ebf709),
+    color-stop(52%, #ffffff),
+    color-stop(61%, #ffffff),
+    color-stop(82%, #207cca),
+    color-stop(99%, #207cca),
+    color-stop(99%, #207cca),
+    color-stop(100%, #7db9e8)
+  );
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(45deg, #1e5799 0%, #2989d8 16%, #2989d8 16%, #ffffff 36%, #ffffff 43%, #ebf709 48%, #ffffff 52%, #ffffff 61%, #207cca 82%, #207cca 99%, #207cca 99%, #7db9e8 100%);
+  background: -webkit-linear-gradient(
+    45deg,
+    #1e5799 0%,
+    #2989d8 16%,
+    #2989d8 16%,
+    #ffffff 36%,
+    #ffffff 43%,
+    #ebf709 48%,
+    #ffffff 52%,
+    #ffffff 61%,
+    #207cca 82%,
+    #207cca 99%,
+    #207cca 99%,
+    #7db9e8 100%
+  );
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(45deg, #1e5799 0%, #2989d8 16%, #2989d8 16%, #ffffff 36%, #ffffff 43%, #ebf709 48%, #ffffff 52%, #ffffff 61%, #207cca 82%, #207cca 99%, #207cca 99%, #7db9e8 100%);
+  background: -o-linear-gradient(
+    45deg,
+    #1e5799 0%,
+    #2989d8 16%,
+    #2989d8 16%,
+    #ffffff 36%,
+    #ffffff 43%,
+    #ebf709 48%,
+    #ffffff 52%,
+    #ffffff 61%,
+    #207cca 82%,
+    #207cca 99%,
+    #207cca 99%,
+    #7db9e8 100%
+  );
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(45deg, #1e5799 0%, #2989d8 16%, #2989d8 16%, #ffffff 36%, #ffffff 43%, #ebf709 48%, #ffffff 52%, #ffffff 61%, #207cca 82%, #207cca 99%, #207cca 99%, #7db9e8 100%);
+  background: -ms-linear-gradient(
+    45deg,
+    #1e5799 0%,
+    #2989d8 16%,
+    #2989d8 16%,
+    #ffffff 36%,
+    #ffffff 43%,
+    #ebf709 48%,
+    #ffffff 52%,
+    #ffffff 61%,
+    #207cca 82%,
+    #207cca 99%,
+    #207cca 99%,
+    #7db9e8 100%
+  );
   /* IE10+ */
-  background: linear-gradient(45deg, #1e5799 0%, #2989d8 16%, #2989d8 16%, #ffffff 36%, #ffffff 43%, #ebf709 48%, #ffffff 52%, #ffffff 61%, #207cca 82%, #207cca 99%, #207cca 99%, #7db9e8 100%);
+  background: linear-gradient(
+    45deg,
+    #1e5799 0%,
+    #2989d8 16%,
+    #2989d8 16%,
+    #ffffff 36%,
+    #ffffff 43%,
+    #ebf709 48%,
+    #ffffff 52%,
+    #ffffff 61%,
+    #207cca 82%,
+    #207cca 99%,
+    #207cca 99%,
+    #7db9e8 100%
+  );
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=1);
   /* IE6-9 fallback on horizontal gradient */
@@ -451,7 +546,7 @@ select {
   /*text-transform: capitalize;*/
   border: hidden;
   width: 100%;
-  background: #00A1F5;
+  background: #00a1f5;
   margin: 0 auto;
   margin-top: 30%;
   padding: 10px;
@@ -462,8 +557,8 @@ select {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
-  transition: background .3s;
-  -webkit-transition: background .3s;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
 }
 
 .BotonEspecial-Linea:hover {
@@ -473,7 +568,6 @@ select {
 
 .menu li .BotonEspecial-MenuInicio {
   display: block;
-
   border: hidden;
   width: 150px;
   background: blue !important;
@@ -486,8 +580,8 @@ select {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
-  transition: background .3s;
-  -webkit-transition: background .3s;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
 }
 
 .menu li .BotonEspecial-MenuInicio:hover {
@@ -496,10 +590,9 @@ select {
 
 .BotonEspecial-MenuInicioParcial {
   display: block;
-
   border: hidden;
   width: 150px;
-  background: red;
+  background: #00a1f5;
   margin-top: 1%;
   padding: 6px;
   text-align: center;
@@ -509,16 +602,13 @@ select {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
   border-radius: 7px;
-  transition: background .3s;
-  -webkit-transition: background .3s;
+  transition: background 0.3s;
+  -webkit-transition: background 0.3s;
 }
 
 .BotonEspecial-MenuInicioParcial:hover {
   background: green;
 }
-
-
-
 
 .CajaUno h1 {
   background: #f50056;
@@ -533,17 +623,14 @@ select {
   color: #f50056;
 }
 
-
-
 .CajaUno a {
-  color: #DDDDDD;
+  color: #dddddd;
 }
 
 .PiedraPapelTijera {
   width: 100px;
   height: 100px;
   padding: 10px;
-
 }
 
 /* sector GitHub Fork*/
@@ -558,12 +645,38 @@ select {
   background-color: #a00;
 
   /* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.15)));
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
-  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(0, 0, 0, 0)),
+    to(rgba(0, 0, 0, 0.15))
+  );
+  background-image: -webkit-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15)
+  );
+  background-image: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15)
+  );
+  background-image: -ms-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15)
+  );
+  background-image: -o-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15)
+  );
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.15)
+  );
 
   /* Add a drop shadow */
   -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.5);
