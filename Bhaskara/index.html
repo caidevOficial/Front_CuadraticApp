@@ -2,131 +2,135 @@
 <html>
 
 <head>
-  <!-- Facebook Pixel Code -->
-  <script>
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod ?
-          n.callMethod.apply(n, arguments) :
-          n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(
-      window,
-      document,
-      "script",
-      "https://connect.facebook.net/en_US/fbevents.js"
-    );
-    fbq("init", "737924300094779");
-    fbq("track", "PageView");
-  </script>
-  <noscript><img height="1" width="1" style="display: none;"
-      src="https://www.facebook.com/tr?id=737924300094779&ev=PageView&noscript=1" /></noscript>
-  <!-- End Facebook Pixel Code -->
-</head>
+	<meta charset="utf-8" />
+	<title>Resolvente mediante Bhaskara</title>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Resolvente mediante Bhaskara</title>
-  <link rel="icon" type="image/x-icon" href="../TaiIcono.png" />
+	<!--Estilos-->
+	<link rel="stylesheet" type="text/css" href="../estilo.css" />
+	<link rel="stylesheet" type="text/css" href="../animacion.css" />
+	<!--final de Estilos-->
 
-  <!--Estilos-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!--Lógica-Programación-->
+	<script type="text/javascript" src="bhaskara1.js"></script>
+	<!--Final de Lógica-Programación -->
 
-  <link rel="stylesheet" type="text/css" href="../estilo.css" />
-  <link rel="stylesheet" type="text/css" href="../animacion.css" />
-  <!--final de Estilos-->
+	<!--Validar que el input solo sean numeros -->
+	<script>
+		function soloNumeros(e) {
+			key = e.keyCode || e.which;
+			teclado = String.fromCharCode(key);
+			numeros = "0123456789-";
+			especiales = "8-37-38-46"; //array
+			teclado_especial = false;
+
+			for (var i in especiales) {
+				if (key == especiales[i]) {
+					teclado_especial = true;
+				}
+			}
+			if (numeros.indexOf(teclado) == -1 && !teclado_especial) {
+				return false;
+			}
+		}
+	</script>
+	<!--Final de Lógica-Programación -->
+
+	<link rel="icon" type="image/x-icon" href="../taiIcono.png" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
-  <!-- TOP RIGHT RIBBON: START COPYING HERE -->
-  <div class="github-fork-ribbon-wrapper right">
-    <div class="github-fork-ribbon">
-      <a href="https://github.com/caidevOficial/cuadraticApp" target="_blank">Fork me on GitHub</a>
-    </div>
-  </div>
+	<div class="animated bounceIn header">
+		<center>
+			<h5>Resolvente <strong> Mediante Bhaskara</strong></h5>
+		</center>
+		<a class="Boton-nav" onclick="location.href='index.html'"><i class="far fa-hand-point-left"></i>Men&uacute;
+			Bhaskara</a>
+	</div>
 
-  <div class="animated bounceIn header">
-    <a class="Boton-nav" onclick="location.href='../index.html'"><i class="fas fa-bars"></i>Men&uacute; Principal</a>
-    <center>
-      <h1>Resolvente.</h1>
-    </center>
-  </div>
+	<div class="row">
+		<div class="col-3 col-s-3 menu"></div>
 
-  <div class="row">
-    <div class="col-3 col-s-3 menu">
-      <ul>
-        <li class="Boton-Degradado" onclick="location.href='bhaskara1.html'">
-          3 terminos Completos
-        </li>
-      </ul>
-    </div>
+		<div class="col-6 col-s-9">
+			<fieldset>
+				<form id="InputBox" class="animated bounceInLeft" class="animated bounceInLeft"
+					class="animated bounceInLeft">
+					<div align="center">
+						<h1>Mandale Bhaskara!</h1>
+						<h5>NO PONER LA X, solo el coeficiente que la acompaña con su signo</h5>
+						<h2>A = <input type="text" placeholder="Ax^2" onkeypress="return soloNumeros(event)"
+								onpaste="return false" id="terminoA" />
+						</h2>
+						<h5>NO PONER LA X, solo el coeficiente que la acompaña con su signo</h5>
+						<h2>B = <input type="text" placeholder="Bx" onkeypress="return soloNumeros(event)"
+								onpaste="return false" id="terminoB" />
+						</h2>
+						<h5>Colocar el termino C con su respectivo signo</h5>
+						<h2>C = <input type="text" placeholder="C" onkeypress="return soloNumeros(event)"
+								onpaste="return false" id="terminoC" />
+						</h2>
+						<br />
+						<a class="Boton-nav" onclick="bhaskara()">Mandale Bhaskara! - By Caidev</a>
+						<br />
+					</div>
+				</form>
+			</fieldset>
+			<fieldset>
+				<form id="InputBox" class="animated bounceInLeft" class="animated bounceInLeft"
+					class="animated bounceInLeft">
+					<div align="center">
+						<h1>Soluciones de X1 y X2!</h1>
+						<h2>
+							X1 = <input type="textResul" placeholder="Resultado de X1" id="x1" />
+						</h2>
+						<h2>
+							X2 = <input type="textResul" placeholder="Resultado de X2" id="x2" />
+						</h2>
+						<h2>
+							Xv =
+							<input type="textResul" placeholder="V&eacute;rtice" id="Xvertice" />
+						</h2>
+						<h2>
+							Yv =
+							<input type="textResul" placeholder="V&eacute;rtice" id="Yvertice" />
+						</h2>
+						<br />
+					</div>
+				</form>
+		</div>
+		</fieldset>
+		<div class="col-3 col-s-12">
+			<div class="aside animated bounceInUp">
+				<h1>Condiciones:</h1>
+				<h2>1. Para el correcto funcionamiento del c&oacute;digo:<br /></h2>
+				<h3>
+					[A] Colocar los t&eacute;rminos A, B y C en el casillero
+					correspondiente, por ejemplo si la formula fuese -2x^2+25x-4 :
+					entenderemos que el T&eacute;rmino A es -2, el T&eacute;rmino B es
+					25 y el T&eacute;rmino C es -4 (siempre respetar el signo para que
+					la ecuacion de correctamente.<br />
+					[B] Dale like a mi GIT ;) .<br />
+					[C] podes invitarme un cafecito dando clic en el boton de abajo y te
+					lo voy a agradecer de coraz&oacute;n.<br />
+				</h3>
+				<!-- Sale un cafecito ;) -->
+				<a href='https://cafecito.app/caidevoficial' rel='noopener' target='_blank'>
+					<img srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, 
+					https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, 
+					https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x'
+						src='https://cdn.cafecito.app/imgs/buttons/button_6.png'
+						alt='Invitame un café en cafecito.app' /></a>
+			</div>
+		</div>
+	</div>
 
-    <div class="col-6 col-s-9">
-      <center>
-        <img src="formulaCuadratica.jpg" style="overflow: scroll;" />
-      </center>
-    </div>
-
-    <div class="col-3 col-s-12">
-      <div class="aside animated bounceInUp">
-        <h2>Objetivos</h2>
-        <ul>
-          <li>
-            Resolver teniendo los 3 terminos completos mediante Bhaskara
-          </li>
-          <li>Buscar las dos soluciones x1 y x2</li>
-          <li>Ahorrar tiempo</li>
-          <li>Salvar un arbol ?)</li>
-        </ul>
-        <!-- Sale un cafecito ;) -->
-        <a href="https://cafecito.app/caidevoficial" rel="noopener" target="_blank">
-          <img srcset="
-                https://cdn.cafecito.app/imgs/buttons/button_6.png       1x,
-                https://cdn.cafecito.app/imgs/buttons/button_6_2x.png    2x,
-                https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x
-              " src="https://cdn.cafecito.app/imgs/buttons/button_6.png" alt="Invitame un café en cafecito.app" /></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <a class="Boton-nav" onclick="location.href='../index.html'">Men&uacute; Principal</a>
-    <p>WebApp para calcular la resolvente</p>
-  </div>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
-
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyC-FaSSiPoEQC0oa5qyyjYQ4M35e-08tCY",
-      authDomain: "cuadraticapp.firebaseapp.com",
-      databaseURL: "https://cuadraticapp.firebaseio.com",
-      projectId: "cuadraticapp",
-      storageBucket: "cuadraticapp.appspot.com",
-      messagingSenderId: "966895829609",
-      appId: "1:966895829609:web:9c582c5f4b3622d97898f8",
-      measurementId: "G-K9G9QM3SG2",
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
+	<div class="footer">
+		<p>WebApp para calcular la resolvente</p>
+		<br />
+		<h1>
+			<p>By Caidev - FacuFalcone</p>
+		</h1>
+	</div>
 </body>
 
 </html>
