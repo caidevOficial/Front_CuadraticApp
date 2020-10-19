@@ -46,10 +46,6 @@ _Estos proyectos al día de hoy tienen un solo y único autor_
 * **Facu Falcone** - *Documentación* - [caidevOficial](https://github.com/caidevOficial).
 * **Facu Falcone** - *Diseño* - [caidevOficial](https://github.com/caidevOficial).
 
-## Licencia 📄
-
-Este proyecto está bajo la Licencia [GNU GENERAL PUBLIC LICENSE v3.0] - mira el archivo [LICENSE.md](LICENSE) para detalles
-
 ## Expresiones de Gratitud 🎁
 
 * Comenta a otros sobre estos proyectos 📢
