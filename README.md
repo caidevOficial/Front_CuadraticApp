@@ -13,7 +13,7 @@
 <a href="https://getbootstrap.com" target="_blank"> <img src="https://github.com/devicons/devicon/blob/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> 
 <a href="https://www.w3schools.com/css/" target="_blank"> <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg" alt="css3" width="40" height="40"/></a>
 <a href="https://www.w3.org/html/" target="_blank"> <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" alt="html5" width="40" height="40"/> </a> 
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/logo-js.png" alt="javascript" width="29" height="32"/> </a> 
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://github.com/caidevOficial/Logos/blob/master/Lenguajes/logo-js.png" alt="javascript" width="29" height="39"/> </a> 
 
 ## License 📄
 This project is under License [GNU GENERAL PUBLIC LICENSE v3.0] - view the file [LICENSE.md](LICENSE) for details.
