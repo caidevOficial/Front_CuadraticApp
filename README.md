@@ -1,10 +1,15 @@
 
-<!--[](https://github.com/caidevOficial/Logos/blob/master/Personales/PoseidonDevs.png)-->
-<img align="center" src="https://github.com/caidevOficial/Logos/blob/master/Personales/PoseidonDevs.png" width=600/><br>
-
 <a href="https://github.com/caidevOficial/CaiShen_App">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=caidevOficial&show_icons=true&theme=tokyonight" />
 </a>
+
+
+![](https://hit.yhype.me/github/profile?user_id=12877139)
+
+<p align="center">
+    <img src="https://komarev.com/ghpvc/?username=caidevoficial&label=Profile%20views&color=0e75b6&style=plastic" alt="caidevoficial" />
+</p>
+
 
 # CuadraticApp! [Web version]
 
