@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <title>CuadraticApp</title>
-    <link rel="icon" type="image/x-icon" href="taiIcono.png" />
+    <link rel="icon" type="image/x-icon" href="media/taiIcono.png" />
     <!--Estilos-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="estilo.css" />
-    <link rel="stylesheet" type="text/css" href="animacion.css" />
+    <link rel="stylesheet" type="text/css" href="styles/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="styles/animacion.css" />
     <!--final de Estilos-->
     <style></style>
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- TOP RIGHT RIBBON: START COPYING HERE -->
     <div class="github-fork-ribbon-wrapper right">
-      <div class="github-fork-ribbon">
-        <a href="https://github.com/caidevOficial/cuadraticApp" target="_blank"
-          >Fork me on GitHub</a
+        <div class="github-fork-ribbon">
+            <a href="https://github.com/caidevOficial/Front_CuadraticApp" target="_blank">Fork me on GitHub</a
         >
       </div>
     </div>
@@ -33,7 +34,7 @@
         <ul>
           <li
             class="BotonCambioDePagina"
-            onclick="location.href='Bhaskara/index.html'"
+            onclick="location.href='Bhaskara/bhaskara1.html'"
           >
             Calcular mediante Bhaskara
           </li>
@@ -52,20 +53,21 @@
 
       <div class="col-6 col-s-9">
         <center>
-          <img src="formulaCuadratica.jpg" style="overflow: scroll;" />
+          <img src="media/formulaCuadratica.jpg" style="overflow: scroll;" />
         </center>
       </div>
 
       <div class="col-3 col-s-12">
         <div class="aside animated bounceInUp">
-          <h2>Objetivos</h2>
+          <h2>Objetivos:</h2>
           <ul>
             <li>Resolver teniendo los 3 terminos completos</li>
-            <li>Hallar dos soluciones a X</li>
+            <li>Hallar dos soluciones a X y vértices</li>
             <li>Ahorrar tiempo</li>
             <li>Salvar un arbol ?)</li>
             <li>Invitarme un cafecito ^^</li>
           </ul>
+          
           <!-- Sale un cafecito ;) -->
           <a
             href="https://cafecito.app/caidevoficial"
@@ -82,33 +84,12 @@
               alt="Invitame un café en cafecito.app"
           /></a>
         </div>
-      </div>
+    </div>
     </div>
     <div class="footer">
-      <p>WebApp para calcular la resolvente</p>
+        <p>WebApp para calcular la resolvente</p>
     </div>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+</body>
 
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyC-FaSSiPoEQC0oa5qyyjYQ4M35e-08tCY",
-        authDomain: "cuadraticapp.firebaseapp.com",
-        databaseURL: "https://cuadraticapp.firebaseio.com",
-        projectId: "cuadraticapp",
-        storageBucket: "cuadraticapp.appspot.com",
-        messagingSenderId: "966895829609",
-        appId: "1:966895829609:web:9c582c5f4b3622d97898f8",
-        measurementId: "G-K9G9QM3SG2",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
-  </body>
 </html>
