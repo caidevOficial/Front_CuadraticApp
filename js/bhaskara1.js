@@ -7,6 +7,14 @@ Funciones:
 By CaiDev.
 */
 
+function formatoResta(valor) {
+  return valor < 0 ? "x + " + Math.abs(valor) : "x - " + valor;
+}
+
+function formatoSuma(valor) {
+  return valor < 0 ? " - " + Math.abs(valor) : " + " + valor;
+}
+
 function bhaskara() {
 
   //Tomo datos del form:
@@ -72,10 +80,4 @@ function bhaskara() {
   document.getElementById('formulaFactorizada').value = formulaFactorizada;
 }//FIN DE LA FUNCIÓN Bhaskara
 
-function formatoResta(valor) {
-  return valor < 0 ? "x + " + Math.abs(valor) : "x - " + valor;
-}
 
-function formatoSuma(valor) {
-  return valor < 0 ? " - " + Math.abs(valor) : " + " + valor;
-}
