@@ -22,6 +22,8 @@ function bhaskara() {
   var formulaCuadratica_x2 = "Ecuación Inválida";
   var Xvertice = "Error al hallar";
   var Yvertice = "Error al hallar";
+  var formulaCanonica = "Ecuación Inválida";
+  var formulaFactorizada = "Ecuación Inválida";
 
   if (terminoA == 0) {
     // Si A = 0, doy mensajes de error e imprimo resultados default.
@@ -39,6 +41,8 @@ function bhaskara() {
       //Obtengo los vertices.
       Xvertice = (-(terminoB)) / (2 * (terminoA));
       Yvertice = (terminoA * (Math.pow(Xvertice, 2))) + (terminoB * Xvertice) + terminoC;
+      formulaCanonica = "y = " + terminoA + "(x - " + Xvertice + ")^2 + " + Yvertice;
+      formulaFactorizada = "y = " + terminoA + "(x - " + formulaCuadratica_x1 + ")(x - " + formulaCuadratica_x2 + ")";
 
       //Caracteristicas de las parabolas, Imprimo un alert segun Termino Cuadratico.
       if (terminoA > 0) {
@@ -53,6 +57,8 @@ function bhaskara() {
       formulaCuadratica_x2 = "Raíz imaginaria";
       Xvertice = "Error al hallar";
       Yvertice = "Error al hallar";
+      formulaCanonica = "No disponible";
+      formulaFactorizada = "No disponible";
       alert("No tiene soluciónes reales - raices imaginarias");
     }
   }
@@ -62,4 +68,6 @@ function bhaskara() {
   document.getElementById('x2').value = formulaCuadratica_x2;
   document.getElementById('Xvertice').value = Xvertice;
   document.getElementById('Yvertice').value = Yvertice;
+  document.getElementById('formulaCanonica').value = formulaCanonica;
+  document.getElementById('formulaFactorizada').value = formulaFactorizada;
 }//FIN DE LA FUNCIÓN Bhaskara
