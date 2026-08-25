@@ -130,6 +130,15 @@ img {
     padding: 15px;
 }
 
+#graficoParabola {
+    display: block;
+    width: 100%;
+    height: 360px;
+    margin: 20px auto 0;
+    background: #ffffff;
+    border: 1px solid #d0d0d0;
+}
+
 
 /* Responsive Mobile: */
 
