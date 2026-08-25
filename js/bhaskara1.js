@@ -41,8 +41,8 @@ function bhaskara() {
       //Obtengo los vertices.
       Xvertice = (-(terminoB)) / (2 * (terminoA));
       Yvertice = (terminoA * (Math.pow(Xvertice, 2))) + (terminoB * Xvertice) + terminoC;
-      formulaCanonica = "y = " + terminoA + "(x - " + Xvertice + ")^2 + " + Yvertice;
-      formulaFactorizada = "y = " + terminoA + "(x - " + formulaCuadratica_x1 + ")(x - " + formulaCuadratica_x2 + ")";
+      formulaCanonica = "y = " + terminoA + "(" + formatoResta(Xvertice) + ")^2" + formatoSuma(Yvertice);
+      formulaFactorizada = "y = " + terminoA + "(" + formatoResta(formulaCuadratica_x1) + ")(" + formatoResta(formulaCuadratica_x2) + ")";
 
       //Caracteristicas de las parabolas, Imprimo un alert segun Termino Cuadratico.
       if (terminoA > 0) {
@@ -71,3 +71,11 @@ function bhaskara() {
   document.getElementById('formulaCanonica').value = formulaCanonica;
   document.getElementById('formulaFactorizada').value = formulaFactorizada;
 }//FIN DE LA FUNCIÓN Bhaskara
+
+function formatoResta(valor) {
+  return valor < 0 ? "x + " + Math.abs(valor) : "x - " + valor;
+}
+
+function formatoSuma(valor) {
+  return valor < 0 ? " - " + Math.abs(valor) : " + " + valor;
+}
