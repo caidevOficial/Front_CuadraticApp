@@ -1,52 +1,87 @@
 /*
-Resolver una ecuacion de segundo grado mediante resolvente de bhaskara.
-Funciones:
-  1 - Si el coeficiente del termino cuadratico es 0, denotara un mensaje de error advirtiendo que la division principal sera por 0, por lo tanto no se puede efectuar.
-  2 - Si la determinante da un numero negativo ( antes de efectuar su raiz cuadrada) dara un mensaje de error advirtiendo que las raices no son reales, sino imaginarias.
-  3 - en caso de no cumplirse los puntos antes mencionados, la ecuacion se resolvera sin problemas, denotando sus dos soluciones!
-By CaiDev.
+  Resolvente de Bhaskara y Ecuaciones Cuadráticas
+  Actualizado con soporte para números flotantes/decimales, raíces complejas,
+  ecuaciones lineales degeneradas y sin alertas intrusivas.
+  Paleta y filosofía CuadraticApp Yaguareté.
+  By CaiDev & Modernized Architecture.
 */
 
-function bhaskara()
-{
-
-var terminoA = parseInt(document.getElementById('terminoA').value);
-var terminoB = parseInt(document.getElementById('terminoB').value);
-var terminoC = parseInt(document.getElementById('terminoC').value);
-
-var determinante;
-
-var formulaCuadratica_x1;
-var formulaCuadratica_x2;
-
-var solucion_x1;
-var solucion_x2;
-
-if (terminoA!=0){
-
-	determinante = parseFloat(Math.sqrt(((terminoB*terminoB) - (4*terminoA*terminoC))));
-	if (determinante >= 0){
-		formulaCuadratica_x1 = ((-(terminoB))+determinante)/(2*terminoA);
-		formulaCuadratica_x2 =  ((-(terminoB))-determinante)/(2*terminoA);	
-	}
-	else{
-      formulaCuadratica_x1 = "Raíz imaginaria";
-      formulaCuadratica_x2 = "Raíz imaginaria";
-      alert("No tiene soluciónes reales - raices imaginarias");
-	}
-	
+function parseValue(val) {
+  if (typeof val === 'number') return isNaN(val) ? 0 : val;
+  if (!val) return 0;
+  var str = String(val).trim().replace(',', '.');
+  if (str === '' || str === '-' || str === '+') return 0;
+  if (str.indexOf('/') !== -1) {
+    var parts = str.split('/');
+    var n = parseFloat(parts[0]);
+    var d = parseFloat(parts[1]);
+    if (!isNaN(n) && !isNaN(d) && d !== 0) return n / d;
+  }
+  var res = parseFloat(str);
+  return isNaN(res) ? 0 : res;
 }
-else {
-      formulaCuadratica_x1 = "Ecuación Inválida";
-      formulaCuadratica_x2 = "Ecuación Inválida";
-    	alert("Si el termino A es 0, pretenderas dividir tambien por 0 y eso NO SE PUEDE!");
+
+function formatResult(num, dec) {
+  dec = dec || 4;
+  if (Number.isInteger(num)) return num.toString();
+  return Number(num.toFixed(dec)).toString();
 }
-solucion_x1 = formulaCuadratica_x1;
-solucion_x2 = formulaCuadratica_x2;
 
-	
-document.getElementById('x1').value = solucion_x1;
-document.getElementById('x2').value = solucion_x2;
+function bhaskara() {
+  var elA = document.getElementById('terminoA');
+  var elB = document.getElementById('terminoB');
+  var elC = document.getElementById('terminoC');
 
+  var terminoA = elA ? parseValue(elA.value) : 0;
+  var terminoB = elB ? parseValue(elB.value) : 0;
+  var terminoC = elC ? parseValue(elC.value) : 0;
 
-}//FIN DE LA FUNCIÓN Bhaskara
+  var solucion_x1 = "";
+  var solucion_x2 = "";
+
+  if (terminoA !== 0) {
+    var discriminante = (terminoB * terminoB) - (4 * terminoA * terminoC);
+
+    if (discriminante > 0) {
+      var raizDelta = Math.sqrt(discriminante);
+      var x1 = ((-terminoB) + raizDelta) / (2 * terminoA);
+      var x2 = ((-terminoB) - raizDelta) / (2 * terminoA);
+      solucion_x1 = formatResult(x1);
+      solucion_x2 = formatResult(x2);
+    } else if (Math.abs(discriminante) < 1e-12) {
+      var xUnica = (-terminoB) / (2 * terminoA);
+      solucion_x1 = formatResult(xUnica);
+      solucion_x2 = formatResult(xUnica) + " (Raíz doble)";
+    } else {
+      var parteReal = (-terminoB) / (2 * terminoA);
+      var parteImaginaria = Math.sqrt(-discriminante) / (2 * Math.abs(terminoA));
+      var imagStr = (Math.abs(parteImaginaria - 1) < 1e-6) ? "i" : formatResult(parteImaginaria) + "i";
+      solucion_x1 = formatResult(parteReal) + " + " + imagStr;
+      solucion_x2 = formatResult(parteReal) + " - " + imagStr;
+    }
+  } else {
+    if (terminoB !== 0) {
+      var xLin = -terminoC / terminoB;
+      solucion_x1 = formatResult(xLin) + " (Lineal, A=0)";
+      solucion_x2 = "N/A (grado 1)";
+    } else {
+      if (terminoC === 0) {
+        solucion_x1 = "Infinitas Soluciones (0=0)";
+        solucion_x2 = "Identidad";
+      } else {
+        solucion_x1 = "Sin Solución";
+        solucion_x2 = "Contradicción";
+      }
+    }
+  }
+
+  var outX1 = document.getElementById('x1');
+  var outX2 = document.getElementById('x2');
+  if (outX1) outX1.value = solucion_x1;
+  if (outX2) outX2.value = solucion_x2;
+
+  // Si existe el motor moderno global, sincronizar
+  if (window.CuadraticApp && typeof window.CuadraticApp.calculate === 'function') {
+    window.CuadraticApp.calculate();
+  }
+}

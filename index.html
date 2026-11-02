@@ -1,92 +1,399 @@
 <!DOCTYPE html>
-<html>
+<html lang="es" data-theme="dark">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CuadraticApp - Resolvente Cuadrática Inteligente | Yaguareté Edition</title>
+  <meta name="description" content="Calculadora interactiva moderna de ecuaciones cuadráticas con resolvente de Bhaskara, método de Po-Shen Loh, gráfico dinámico de parábola y paso a paso didáctico.">
+  <link rel="icon" type="image/x-icon" href="yaguarete_icon.ico">
 
+  <!-- Estilos del Sistema de Diseño Yaguareté -->
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" type="text/css" href="animacion.css">
 </head>
-
-	<head>
-		<meta charset="utf-8">
-		<title>CuadraticApp</title>
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-
-		<!--Estilos-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<link rel="stylesheet" type="text/css" href="estilo.css">
-		<link rel="stylesheet" type="text/css" href="animacion.css">
-		<!--final de Estilos-->
-
- <style>
-
-
-    </style>
-	</head>
 <body>
-      <!-- TOP RIGHT RIBBON: START COPYING HERE -->
-      <div class="github-fork-ribbon-wrapper right">
-          <div class="github-fork-ribbon">
-              <a href="https://github.com/caidevOficial/cuadraticApp" target="_blank" >Fork me on GitHub</a>
+
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+  <nav class="top-navbar" aria-label="Navegación principal">
+    <div class="nav-container">
+      <a href="index.html" class="brand-wrapper" title="CuadraticApp Inicio">
+        <img src="assets/yaguarete_icon.png" alt="Yaguareté Lang Icon" class="brand-logo-img">
+        <div class="brand-text">
+          <h1>#CuadraticApp <span class="brand-tag">Yaguareté Lang</span></h1>
+          <span class="brand-subtitle">Resolvente Cuadrática &middot; Bhaskara & Po-Shen Loh</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <a href="https://github.com/caidevOficial/cuadraticApp" target="_blank" rel="noopener noreferrer" class="btn-nav" title="Repositorio en GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <!-- Botón alternador de Modo Oscuro / Claro -->
+        <button id="themeToggleBtn" class="btn-theme-toggle" type="button" aria-label="Cambiar tema">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-wrapper">
+    <!-- Hero Header -->
+    <header class="hero-header animated fadeIn">
+      <div class="badge-yaguarete">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+        <span>Paleta Oficial Yaguareté Lang &bull; Electric Blue & Cyber Cyan</span>
+      </div>
+      <h2 class="hero-title">
+        Resolvente Cuadrática <span class="text-gradient-cyan">Inteligente</span>
+      </h2>
+      <p class="hero-desc">
+        Calcula al instante raíces reales y complejas, analiza las propiedades de la parábola y aprende con el paso a paso didáctico interactivo.
+      </p>
+    </header>
+
+    <!-- App Grid -->
+    <div class="grid-app">
+      <!-- COLUMNA IZQUIERDA: CONTROLES, ENTRADA Y SOLUCIONES -->
+      <section class="card animated fadeIn delay-1" aria-labelledby="card-solver-title">
+        <div class="card-header">
+          <h3 id="card-solver-title" class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2"/>
+              <line x1="8" y1="6" x2="16" y2="6"/>
+              <line x1="16" y1="14" x2="16" y2="18"/>
+              <path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01"/>
+            </svg>
+            <span>Configuración de la Ecuación</span>
+          </h3>
+          <span id="statusBadge" class="status-badge real-two">Calculando...</span>
+        </div>
+
+        <div class="card-body">
+          <!-- Selector de Método Matemático -->
+          <div class="method-tabs" role="tablist">
+            <button id="tabBhaskara" class="method-tab-btn active" type="button" role="tab" aria-selected="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+              <span>Fórmula de Bhaskara</span>
+            </button>
+            <button id="tabPoShenLoh" class="method-tab-btn" type="button" role="tab" aria-selected="false">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="2" x2="12" y2="22"/>
+                <path d="M12 6c3 0 5 2.5 5 6s-2 6-5 6"/>
+              </svg>
+              <span>Método Po-Shen Loh</span>
+            </button>
           </div>
+
+          <!-- Vista Previa Matemática en Tiempo Real -->
+          <div class="live-formula-card">
+            <div class="live-formula-label">Forma Polinómica Actual f(x) = 0</div>
+            <div id="liveEquation" class="live-equation-text">x² - 5x + 6 = 0</div>
+          </div>
+
+          <!-- Inputs de Coeficientes A, B, C -->
+          <form id="quadraticForm" onsubmit="event.preventDefault();">
+            <div class="inputs-grid">
+              <!-- Coeficiente A -->
+              <div class="coefficient-card">
+                <div class="coef-header">
+                  <label for="terminoA" class="coef-title">Término A <span style="color:var(--yag-gold-400)">(x²)</span></label>
+                  <span class="coef-badge">Cuadrático</span>
+                </div>
+                <div class="coef-input-wrapper">
+                  <button type="button" class="btn-step" data-target="terminoA" data-step="-1" title="Restar 1" aria-label="Restar 1 a término A">&minus;</button>
+                  <input type="text" id="terminoA" class="coef-input" value="1" inputmode="decimal" autocomplete="off" placeholder="a" aria-label="Coeficiente A">
+                  <button type="button" class="btn-step" data-target="terminoA" data-step="1" title="Sumar 1" aria-label="Sumar 1 a término A">&plus;</button>
+                </div>
+              </div>
+
+              <!-- Coeficiente B -->
+              <div class="coefficient-card">
+                <div class="coef-header">
+                  <label for="terminoB" class="coef-title">Término B <span style="color:#60A5FA">(x)</span></label>
+                  <span class="coef-badge">Lineal</span>
+                </div>
+                <div class="coef-input-wrapper">
+                  <button type="button" class="btn-step" data-target="terminoB" data-step="-1" title="Restar 1" aria-label="Restar 1 a término B">&minus;</button>
+                  <input type="text" id="terminoB" class="coef-input" value="-5" inputmode="decimal" autocomplete="off" placeholder="b" aria-label="Coeficiente B">
+                  <button type="button" class="btn-step" data-target="terminoB" data-step="1" title="Sumar 1" aria-label="Sumar 1 a término B">&plus;</button>
+                </div>
+              </div>
+
+              <!-- Coeficiente C -->
+              <div class="coefficient-card">
+                <div class="coef-header">
+                  <label for="terminoC" class="coef-title">Término C <span style="color:var(--yag-jungle-500)">(cte)</span></label>
+                  <span class="coef-badge">Independiente</span>
+                </div>
+                <div class="coef-input-wrapper">
+                  <button type="button" class="btn-step" data-target="terminoC" data-step="-1" title="Restar 1" aria-label="Restar 1 a término C">&minus;</button>
+                  <input type="text" id="terminoC" class="coef-input" value="6" inputmode="decimal" autocomplete="off" placeholder="c" aria-label="Coeficiente C">
+                  <button type="button" class="btn-step" data-target="terminoC" data-step="1" title="Sumar 1" aria-label="Sumar 1 a término C">&plus;</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="actions-row">
+              <button id="btnCalculate" type="button" class="btn-primary-action">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <span>Calcular Resolvente</span>
+              </button>
+              <button id="btnClear" type="button" class="btn-secondary-action">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                </svg>
+                <span>Reiniciar</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Presets y Ejemplos de Prueba Rápida -->
+          <div class="presets-section">
+            <div class="presets-label">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+              <span>Ejemplos y Casos Típicos:</span>
+            </div>
+            <div class="presets-grid">
+              <button type="button" class="btn-preset" data-a="1" data-b="-5" data-c="6">x² - 5x + 6 = 0 (2 raíces reales)</button>
+              <button type="button" class="btn-preset" data-a="1" data-b="-4" data-c="4">x² - 4x + 4 = 0 (Raíz doble)</button>
+              <button type="button" class="btn-preset" data-a="1" data-b="0" data-c="4">x² + 4 = 0 (Complejas puras)</button>
+              <button type="button" class="btn-preset" data-a="1" data-b="-2" data-c="5">x² - 2x + 5 = 0 (Complejas)</button>
+              <button type="button" class="btn-preset" data-a="-1" data-b="2" data-c="8">-x² + 2x + 8 = 0 (Cóncava abajo)</button>
+              <button type="button" class="btn-preset" data-a="2" data-b="-18" data-c="0">2x² - 18x = 0 (Incompleta c=0)</button>
+            </div>
+          </div>
+
+          <!-- TARJETAS DE SOLUCIONES X1 Y X2 -->
+          <div class="results-dashboard" style="margin-top: 1.5rem;">
+            <div class="roots-cards-grid">
+              <!-- Raíz X1 -->
+              <div class="root-card root-1">
+                <div class="root-card-header">
+                  <span class="root-label">Solución X₁</span>
+                  <button type="button" class="btn-copy-root" data-copy="x1Val" title="Copiar valor de X1" aria-label="Copiar X1">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                  </button>
+                </div>
+                <div id="x1Val" class="root-value">3</div>
+              </div>
+
+              <!-- Raíz X2 -->
+              <div class="root-card root-2">
+                <div class="root-card-header">
+                  <span class="root-label">Solución X₂</span>
+                  <button type="button" class="btn-copy-root" data-copy="x2Val" title="Copiar valor de X2" aria-label="Copiar X2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                    </svg>
+                  </button>
+                </div>
+                <div id="x2Val" class="root-value">2</div>
+              </div>
+            </div>
+
+            <!-- Propiedades Matemáticas de la Parábola -->
+            <div class="parabola-props-grid">
+              <div class="prop-chip">
+                <span class="prop-title">Discriminante (Δ)</span>
+                <span id="discVal" class="prop-val" style="color:var(--yag-gold-400)">1</span>
+              </div>
+              <div class="prop-chip">
+                <span class="prop-title">Vértice V(h, k)</span>
+                <span id="vertexVal" class="prop-val" style="color:#60A5FA">(2.5, -0.25)</span>
+              </div>
+              <div class="prop-chip">
+                <span class="prop-title">Eje de Simetría</span>
+                <span id="axisVal" class="prop-val">x = 2.5</span>
+              </div>
+              <div class="prop-chip">
+                <span class="prop-title">Concavidad</span>
+                <span id="concavityVal" class="prop-val">Hacia arriba</span>
+              </div>
+              <div class="prop-chip">
+                <span class="prop-title">Ordenada (0, c)</span>
+                <span id="interceptVal" class="prop-val" style="color:#EC4899">(0, 6)</span>
+              </div>
+              <div class="prop-chip">
+                <span class="prop-title">Forma Canónica</span>
+                <span id="canonicalVal" class="prop-val">(x - 2.5)² - 0.25</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COLUMNA DERECHA: GRÁFICO INTERACTIVO Y PASO A PASO -->
+      <section class="card graph-card animated fadeIn delay-2" aria-labelledby="card-graph-title">
+        <div class="card-header">
+          <h3 id="card-graph-title" class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+            <span>Gráfico Dinámico de la Parábola</span>
+          </h3>
+          <span style="font-size:0.75rem; color:var(--yag-muted)">Plano Cartesiano 2D</span>
+        </div>
+
+        <div class="card-body">
+          <!-- Canvas Interactivo -->
+          <div id="canvasContainer" class="canvas-container">
+            <canvas id="parabolaCanvas"></canvas>
+            
+            <!-- Barra de herramientas del gráfico -->
+            <div class="canvas-toolbar">
+              <button id="btnZoomIn" type="button" class="canvas-tool-btn" title="Acercar (Zoom In)" aria-label="Acercar gráfico">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </button>
+              <button id="btnZoomOut" type="button" class="canvas-tool-btn" title="Alejar (Zoom Out)" aria-label="Alejar gráfico">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              </button>
+              <button id="btnResetView" type="button" class="canvas-tool-btn" title="Restablecer vista" aria-label="Restablecer vista">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              </button>
+            </div>
+
+            <!-- Tooltip del cursor en el canvas -->
+            <div id="canvasTooltip" class="canvas-tooltip" style="display:none;"></div>
+          </div>
+
+          <!-- Leyenda del Gráfico -->
+          <div class="graph-legend">
+            <div class="legend-item"><span class="legend-dot dot-parabola"></span><span>Curva Parábola</span></div>
+            <div class="legend-item"><span class="legend-dot dot-roots"></span><span>Raíces Reales (x₁, x₂)</span></div>
+            <div class="legend-item"><span class="legend-dot dot-vertex"></span><span>Vértice V(h, k)</span></div>
+            <div class="legend-item"><span class="legend-dot dot-intercept"></span><span>Ordenada al origen (0, c)</span></div>
+          </div>
+
+          <!-- DESARROLLO PASO A PASO DIDÁCTICO -->
+          <div style="margin-top: 1.75rem;">
+            <h4 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.85rem; color: var(--yag-ivory); display: flex; align-items: center; gap: 0.5rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 11 12 14 22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+              <span>Resolución Paso a Paso</span>
+            </h4>
+            <div id="stepsContainer" class="steps-container">
+              <!-- El contenido se inyecta dinámicamente desde app.js -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SECCIÓN EDUCATIVA: TEORÍA DE BHASKARA Y PO-SHEN LOH -->
+    <section class="card animated fadeIn delay-3" style="margin-top: 2rem;">
+      <div class="card-header">
+        <h3 class="card-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <span>Fundamentos Matemáticos &bull; Bhaskara y Po-Shen Loh</span>
+        </h3>
+      </div>
+      <div class="card-body">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div>
+            <h4 style="color: var(--brand-cyan-dark); font-weight: 700; margin-bottom: 0.5rem;">Fórmula de Bhaskara (Resolvente General)</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Atribuida históricamente al matemático indio Bhaskara II (siglo XII), permite resolver cualquier ecuación de la forma <em>ax² + bx + c = 0</em> mediante la fórmula:
+              <br><strong style="font-family: var(--font-mono); color: var(--text-primary);">x = (-b &plusmn; &radic;(b² - 4ac)) / (2a)</strong>.
+              El discriminante <em>&Delta; = b² - 4ac</em> indica si las raíces son reales distintas (&Delta; &gt; 0), una raíz doble (&Delta; = 0) o complejas conjugadas (&Delta; &lt; 0).
+            </p>
+          </div>
+          <div>
+            <h4 style="color: var(--brand-cyan-dark); font-weight: 700; margin-bottom: 0.5rem;">Método de Po-Shen Loh (Simetría de Raíces)</h4>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
+              Popularizado en 2019 por el profesor de Carnegie Mellon Po-Shen Loh, encuentra las raíces sin necesidad de memorizar la fórmula cuadrática completa. Se basa en que las dos raíces son simétricas respecto a su promedio <em>m = -b / (2a)</em> y pueden expresarse como <em>m &plusmn; u</em>, donde <em>u² = m² - (c/a)</em>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- TOAST DE NOTIFICACIONES -->
+  <div id="toastNotice" class="toast-notice" role="status" aria-live="polite">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+    <span id="toastMsg">¡Copiado con éxito!</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-yaguarete-tribute">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+        </svg>
+        <span>Diseño y Paleta Oficial del Ecosistema Yaguareté Lang &bull; Electric Blue & Cyber Cyan</span>
       </div>
 
-<div class=" animated bounceIn header">
-  <center><h1>#CuadraticApp!</h1><p>Formulas Cuadraticas <strong> JS</strong> </p></center>
-</div>
+      <div class="footer-links">
+        <a href="Bhaskara/index.html">Versión Bhaskara Específica</a>
+        <a href="https://github.com/caidevOficial/cuadraticApp" target="_blank" rel="noopener noreferrer">Código Fuente en GitHub</a>
+        <a href="https://es.wikipedia.org/wiki/Ecuaci%C3%B3n_de_segundo_grado" target="_blank" rel="noopener noreferrer">Teoría Ecuaciones de 2do Grado</a>
+      </div>
 
-<div class="row">
-  <div class="col-3 col-s-3 menu">
-    <ul>
-      <li class="MiBotonUTNMenuInicioParaParcial" onclick="location.href='Bhaskara/index.html'" >Resolvente de Bhaskara</li>
-      <!-- <li class="MiBotonUTNMenuInicioParaParcial" onclick="location.href='Po-shen_loh/index.html'" >Resolvente de Po-Shen Loh</li> -->
-      
-       <li class="MiBotonUTNMenuInicioNoParcial"     ><a  href='http://www.w3schools.com/js/default.asp'  target="_blank" style="color :white" >W3School</a></li>
-    </ul>
-  </div>
-
-  <div class="col-6 col-s-9">
-   	<center><img src="formulaCuadratica.jpg" style="overflow: scroll;"></center>
-  </div>
-
-  <div class="col-3 col-s-12">
-    <div class="aside animated bounceInUp">
-      <h2>Objetivos</h2>
-      <ul>
-      	<li>Resolver teniendo los 3 terminos completos  </li>
-      	<li>Buscar las dos soluciones  </li>
-      	<li>Ahorrar tiempo </li>
-      	<li>Salvar un arbol ?)</li>
-      	<li>Dale FOLLOW a mi GIT!</li>
-      </ul>
-     
+      <p class="footer-credits">
+        Proyecto CuadraticApp &bull; Rediseñado con la GUI y Paleta Oficial de Yaguareté Lang Web &bull; Original por CaiDev - FacuFalcone.
+      </p>
     </div>
-  </div>
-</div>
+  </footer>
 
-<div class="footer">
-  <p>WebApp para calcular la resolvente</p>
-</div>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+  <!-- Firebase Analytics (Opcional del proyecto original) -->
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+  <script>
+    try {
+      var firebaseConfig = {
+        apiKey: "AIzaSyC-FaSSiPoEQC0oa5qyyjYQ4M35e-08tCY",
+        authDomain: "cuadraticapp.firebaseapp.com",
+        databaseURL: "https://cuadraticapp.firebaseio.com",
+        projectId: "cuadraticapp",
+        storageBucket: "cuadraticapp.appspot.com",
+        messagingSenderId: "966895829609",
+        appId: "1:966895829609:web:9c582c5f4b3622d97898f8",
+        measurementId: "G-K9G9QM3SG2"
+      };
+      if (typeof firebase !== 'undefined' && firebase.initializeApp) {
+        firebase.initializeApp(firebaseConfig);
+        if (firebase.analytics) firebase.analytics();
+      }
+    } catch (e) {
+      console.info("Firebase offline mode");
+    }
+  </script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyC-FaSSiPoEQC0oa5qyyjYQ4M35e-08tCY",
-    authDomain: "cuadraticapp.firebaseapp.com",
-    databaseURL: "https://cuadraticapp.firebaseio.com",
-    projectId: "cuadraticapp",
-    storageBucket: "cuadraticapp.appspot.com",
-    messagingSenderId: "966895829609",
-    appId: "1:966895829609:web:9c582c5f4b3622d97898f8",
-    measurementId: "G-K9G9QM3SG2"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-</script>
+  <!-- Script Principal del Motor Cuadrático -->
+  <script src="app.js"></script>
 </body>
 </html>
