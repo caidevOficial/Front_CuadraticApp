@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resolvente mediante Bhaskara - CuadraticApp | Yaguareté Edition</title>
+  <link rel="icon" type="image/x-icon" href="../yaguarete_icon.ico">
+
+  <!-- Estilos Yaguareté -->
+  <link rel="stylesheet" type="text/css" href="../estilo.css">
+  <link rel="stylesheet" type="text/css" href="../animacion.css">
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="top-navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-wrapper">
+        <img src="../assets/yaguarete_icon.png" alt="Yaguareté Lang Icon" class="brand-logo-img">
+        <div class="brand-text">
+          <h1>#CuadraticApp <span class="brand-tag">Bhaskara</span></h1>
+          <span class="brand-subtitle">Módulo de Resolución por Bhaskara</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <a href="../index.html" class="btn-nav">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          <span>Menú Principal</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-wrapper">
+    <header class="hero-header animated fadeIn">
+      <div class="badge-yaguarete">
+        <span>Módulo Didáctico &bull; Ecuaciones Cuadráticas</span>
+      </div>
+      <h2 class="hero-title">
+        Resolvente mediante <span class="text-gradient-cyan">Bhaskara</span>
+      </h2>
+      <p class="hero-desc">
+        Aprende y resuelve ecuaciones de segundo grado completas e incompletas con la clásica fórmula cuadrática.
+      </p>
+    </header>
+
+    <div class="grid-app" style="grid-template-columns: 1fr 1.2fr;">
+      <!-- MENÚ DE OPCIONES -->
+      <section class="card animated fadeIn delay-1">
+        <div class="card-header">
+          <h3 class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="8" y1="6" x2="21" y2="6"/>
+              <line x1="8" y1="12" x2="21" y2="12"/>
+              <line x1="8" y1="18" x2="21" y2="18"/>
+              <line x1="3" y1="6" x2="3.01" y2="6"/>
+              <line x1="3" y1="12" x2="3.01" y2="12"/>
+              <line x1="3" y1="18" x2="3.01" y2="18"/>
+            </svg>
+            <span>Selección de Ejercicios</span>
+          </h3>
+        </div>
+        <div class="card-body">
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <a href="bhaskara1.html" class="btn-primary-action" style="text-decoration:none;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+              <span>Con los 3 Términos Completos (ax² + bx + c = 0)</span>
+            </a>
+
+            <a href="../index.html" class="btn-secondary-action" style="text-decoration:none; padding: 1rem;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                <path d="M2 12h20"/>
+              </svg>
+              <span>Abrir App Completa con Gráfico y Po-Shen Loh</span>
+            </a>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <h4 style="color: var(--yag-gold-400); font-weight: 700; margin-bottom: 0.65rem;">Objetivos del Módulo:</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.88rem; color: var(--yag-sand);">
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--yag-jungle-500); font-weight: bold;">&check;</span> Resolver teniendo los 3 términos completos.
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--yag-jungle-500); font-weight: bold;">&check;</span> Hallar las dos soluciones x₁ y x₂ (reales o complejas).
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--yag-jungle-500); font-weight: bold;">&check;</span> Ahorrar tiempo y verificar ejercicios paso a paso.
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--yag-jungle-500); font-weight: bold;">&check;</span> ¡Salvar un árbol al no gastar hojas de borrador!
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- REFERENCIA GRÁFICA DE LA FÓRMULA -->
+      <section class="card animated fadeIn delay-2">
+        <div class="card-header">
+          <h3 class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span>Fórmula de Referencia</span>
+          </h3>
+        </div>
+        <div class="card-body" style="text-align: center;">
+          <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--yag-border); background: var(--yag-bg); padding: 1rem;">
+            <img src="formulaCuadratica.jpg" alt="Fórmula Cuadrática" style="max-width: 100%; height: auto; border-radius: var(--radius-sm); filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));">
+          </div>
+          <p style="font-size: 0.85rem; color: var(--yag-muted); margin-top: 1rem;">
+            Deducción general de la fórmula resolvente cuadrática a partir de la compleción de cuadrados.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-yaguarete-tribute">
+        <span>Proyecto CuadraticApp &bull; Paleta Oficial Yaguareté Lang</span>
+      </div>
+      <p class="footer-credits">
+        WebApp para calcular la resolvente cuadrática &bull; By CaiDev - FacuFalcone &bull; Ecosistema Yaguareté Lang Web.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

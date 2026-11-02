@@ -1,132 +1,184 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es" data-theme="dark">
 <head>
-    <meta charset="utf-8" />
-    <title>Resolvente mediante Bhaskara</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resolvente mediante Bhaskara - CuadraticApp | Yaguareté Edition</title>
+  <link rel="icon" type="image/x-icon" href="../yaguarete_icon.ico">
 
-    <!--Estilos-->
-    <link rel="stylesheet" type="text/css" href="../styles/estilo.css" />
-    <link rel="stylesheet" type="text/css" href="../styles/animacion.css" />
-    <!--final de Estilos-->
+  <!-- Estilos Yaguareté -->
+  <link rel="stylesheet" type="text/css" href="../estilo.css">
+  <link rel="stylesheet" type="text/css" href="../animacion.css">
 
-    <!--Lógica-Programación-->
-    <script type="text/javascript" src="../js/bhaskara1.js"></script>
-    <!--Final de Lógica-Programación -->
-
-    <!--Validar que el input solo sean numeros -->
-    <script>
-        function soloNumeros(e) {
-            key = e.keyCode || e.which;
-            teclado = String.fromCharCode(key);
-            numeros = "0123456789-";
-            especiales = "8-37-38-46"; //array
-            teclado_especial = false;
-
-            for (var i in especiales) {
-                if (key == especiales[i]) {
-                    teclado_especial = true;
-                }
-            }
-            if (numeros.indexOf(teclado) == -1 && !teclado_especial) {
-                return false;
-            }
-        }
-    </script>
-    <!--Final de Lógica-Programación -->
-
-    <link rel="icon" type="image/x-icon" href="../media/taiIcono.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Lógica Matemática de Bhaskara -->
+  <script src="bhaskara1.js"></script>
 </head>
-
 <body>
-    <div class="animated bounceIn header">
-        <center>
-            <h5>Resolvente <strong> Mediante Bhaskara</strong></h5>
-        </center>
-        <a class="Boton-nav" onclick="location.href='../index.html'"><i class="far fa-hand-point-left"></i>Men&uacute;
-			Principal</a>
-    </div>
 
-    <div class="row">
-        <div class="col-3 col-s-3 menu"></div>
-
-        <div class="col-6 col-s-9">
-
-            <form id="InputBox" class="animated bounceInLeft" class="animated bounceInLeft" class="animated bounceInLeft">
-                <div align="center">
-                    <h1>Mandale Bhaskara!</h1>
-                    <h5>NO PONER LA X, solo el coeficiente que la acompaña con su signo</h5>
-                    <h2>A = <input type="text" placeholder="Ax^2" onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoA" />
-                    </h2>
-                    <h5>NO PONER LA X, solo el coeficiente que la acompaña con su signo</h5>
-                    <h2>B = <input type="text" placeholder="Bx" onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoB" />
-                    </h2>
-                    <h5>Colocar el termino C con su respectivo signo</h5>
-                    <h2>C = <input type="text" placeholder="C" onkeypress="return soloNumeros(event)" onpaste="return false" id="terminoC" />
-                    </h2>
-                    <br />
-                    <a class="Boton-nav" onclick="bhaskara()">Mandale Bhaskara! - By Caidev</a>
-                    <br />
-                </div>
-            </form>
-
-            <form id="InputBox" class="animated bounceInLeft" class="animated bounceInLeft" class="animated bounceInLeft">
-                <div align="center">
-                    <h1>Soluciones de X1 y X2!</h1>
-                    <h2>
-                        X1 = <input type="textResul" placeholder="Resultado de X1" id="x1" />
-                    </h2>
-                    <h2>
-                        X2 = <input type="textResul" placeholder="Resultado de X2" id="x2" />
-                    </h2>
-                    <h2>
-                        Xv =
-                        <input type="textResul" placeholder="V&eacute;rtice X" id="Xvertice" />
-                    </h2>
-                    <h2>
-                        Yv =
-                        <input type="textResul" placeholder="V&eacute;rtice Y" id="Yvertice" />
-                    </h2>
-                    <h2>
-                        Can&oacute;nica =
-                        <input type="textResul" placeholder="Forma can&oacute;nica" id="formulaCanonica" />
-                    </h2>
-                    <h2>
-                        Factorizada =
-                        <input type="textResul" placeholder="Forma factorizada" id="formulaFactorizada" />
-                    </h2>
-                    <canvas id="graficoParabola" width="640" height="360" aria-label="Gr&aacute;fico de la par&aacute;bola"></canvas>
-                    <br />
-                </div>
-            </form>
-
+  <!-- BARRA DE NAVEGACIÓN -->
+  <nav class="top-navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-wrapper">
+        <img src="../assets/yaguarete_icon.png" alt="Yaguareté Lang Icon" class="brand-logo-img">
+        <div class="brand-text">
+          <h1>#CuadraticApp <span class="brand-tag">Bhaskara</span></h1>
+          <span class="brand-subtitle">Resolvente de Bhaskara &bull; Tres Términos Completos</span>
         </div>
+      </a>
 
-        <div class="col-3 col-s-12">
-            <div class="aside animated bounceInUp">
-                <h1>Condiciones:</h1>
-                <h2>1. Para el correcto funcionamiento del c&oacute;digo:<br /></h2>
-                <h3>
-                    [A] Colocar los t&eacute;rminos A, B y C en el casillero correspondiente, por ejemplo si la formula fuese -2x^2+25x-4 : entenderemos que el T&eacute;rmino A es -2, el T&eacute;rmino B es 25 y el T&eacute;rmino C es -4 (siempre respetar el signo para que
-                    la ecuacion de correctamente.<br /> [B] Dale like a mi GIT ;) .<br /> [C] podes invitarme un cafecito dando clic en el boton de abajo y te lo voy a agradecer de coraz&oacute;n.<br />
-                </h3>
-                <!-- Sale un cafecito ;) -->
-                <a href='https://cafecito.app/caidevoficial' rel='noopener' target='_blank'>
-                    <img srcset='https://cdn.cafecito.app/imgs/buttons/button_6.png 1x, 
-					https://cdn.cafecito.app/imgs/buttons/button_6_2x.png 2x, 
-					https://cdn.cafecito.app/imgs/buttons/button_6_3.75x.png 3.75x' src='https://cdn.cafecito.app/imgs/buttons/button_6.png' alt='Invitame un café en cafecito.app' /></a>
+      <div class="nav-actions">
+        <a href="../index.html" class="btn-nav">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          <span>Panel Principal & Gráfico</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-wrapper">
+    <header class="hero-header animated fadeIn">
+      <div class="badge-yaguarete">
+        <span>Fórmula Cuadrática Clásica &bull; ax² + bx + c = 0</span>
+      </div>
+      <h2 class="hero-title">
+        Resolvente mediante <span class="text-gradient-cyan">Bhaskara</span>
+      </h2>
+      <p class="hero-desc">
+        Introduce los coeficientes numéricos con su signo correspondiente (+ o &minus;). Admite números enteros, decimales y fracciones.
+      </p>
+    </header>
+
+    <div class="grid-app" style="grid-template-columns: 1fr 1fr;">
+      <!-- FORMULARIO DE INGRESO -->
+      <section class="card animated fadeIn delay-1">
+        <div class="card-header">
+          <h3 class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span>Ingreso de Coeficientes</span>
+          </h3>
+        </div>
+        <div class="card-body">
+          <form id="formBhaskara" onsubmit="event.preventDefault(); bhaskara();">
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+              
+              <div class="coefficient-card">
+                <div class="coef-header">
+                  <label for="terminoA" class="coef-title">Término Cuadrático A (x²)</label>
+                  <span class="coef-badge">A &ne; 0</span>
+                </div>
+                <input type="text" id="terminoA" class="coef-input" value="1" placeholder="Ej: 1, -2, 0.5" autocomplete="off" oninput="bhaskara();">
+              </div>
+
+              <div class="coefficient-card">
+                <div class="coef-header">
+                  <label for="terminoB" class="coef-title">Término Lineal B (x)</label>
+                  <span class="coef-badge">Coeficiente B</span>
+                </div>
+                <input type="text" id="terminoB" class="coef-input" value="-5" placeholder="Ej: -5, 4, -1.2" autocomplete="off" oninput="bhaskara();">
+              </div>
+
+              <div class="coefficient-card">
+                <div class="coef-header">
+                  <label for="terminoC" class="coef-title">Término Independiente C</label>
+                  <span class="coef-badge">Constante</span>
+                </div>
+                <input type="text" id="terminoC" class="coef-input" value="6" placeholder="Ej: 6, -8, 2.5" autocomplete="off" oninput="bhaskara();">
+              </div>
+
             </div>
+
+            <div class="actions-row">
+              <button type="button" class="btn-primary-action" onclick="bhaskara();">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+                <span>¡Mandale Bhaskara!</span>
+              </button>
+              <button type="button" class="btn-secondary-action" onclick="document.getElementById('terminoA').value='1'; document.getElementById('terminoB').value='0'; document.getElementById('terminoC').value='0'; bhaskara();">
+                <span>Reiniciar</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Presets -->
+          <div class="presets-section">
+            <div class="presets-label">Casos de Ejemplo:</div>
+            <div class="presets-grid">
+              <button type="button" class="btn-preset" onclick="setCoeffs(1, -5, 6)">x² - 5x + 6 = 0</button>
+              <button type="button" class="btn-preset" onclick="setCoeffs(1, -4, 4)">x² - 4x + 4 = 0</button>
+              <button type="button" class="btn-preset" onclick="setCoeffs(1, 0, 4)">x² + 4 = 0 (Complejas)</button>
+              <button type="button" class="btn-preset" onclick="setCoeffs(2, 4, -6)">2x² + 4x - 6 = 0</button>
+            </div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <div class="footer">
-        <p>WebApp para calcular la resolvente</p>
-        <br />
-        <h1>
-            <p>By Caidev - FacuFalcone</p>
-        </h1>
+      <!-- RESULTADOS Y EXPLICACIÓN -->
+      <section class="card animated fadeIn delay-2">
+        <div class="card-header">
+          <h3 class="card-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            <span>Soluciones Obtenidas</span>
+          </h3>
+        </div>
+        <div class="card-body">
+          <div class="roots-cards-grid" style="grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="root-card root-1">
+              <div class="root-card-header">
+                <span class="root-label">Raíz X₁</span>
+              </div>
+              <input type="text" id="x1" class="root-value" readonly value="3" style="width:100%; background:transparent; border:none; outline:none; color:inherit;">
+            </div>
+
+            <div class="root-card root-2">
+              <div class="root-card-header">
+                <span class="root-label">Raíz X₂</span>
+              </div>
+              <input type="text" id="x2" class="root-value" readonly value="2" style="width:100%; background:transparent; border:none; outline:none; color:inherit;">
+            </div>
+          </div>
+
+          <div class="live-formula-card" style="margin-bottom: 0;">
+            <div class="live-formula-label">Condiciones y Notas:</div>
+            <p style="font-size: 0.88rem; color: var(--yag-sand); text-align: left; line-height: 1.6;">
+              &bull; <strong>Signos:</strong> Si la fórmula es <em>-2x² + 25x - 4</em>, entonces A = -2, B = 25 y C = -4.<br>
+              &bull; <strong>Raíces Complejas:</strong> Si el discriminante <em>b² - 4ac &lt; 0</em>, la ecuación genera soluciones con la unidad imaginaria <em>i</em>.<br>
+              &bull; <strong>Gráfico 2D:</strong> Puedes ver la curva interactiva de esta parábola en el <a href="../index.html" style="font-weight:700;">Panel Principal</a>.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-yaguarete-tribute">
+        <span>Proyecto CuadraticApp &bull; Paleta Oficial Yaguareté Lang</span>
+      </div>
+      <p class="footer-credits">
+        Original por CaiDev - FacuFalcone &bull; Modernizado con la estética Cyber de Yaguareté Lang Web.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function setCoeffs(a, b, c) {
+      document.getElementById('terminoA').value = a;
+      document.getElementById('terminoB').value = b;
+      document.getElementById('terminoC').value = c;
+      bhaskara();
+    }
+    // Ejecutar al cargar
+    document.addEventListener('DOMContentLoaded', function() {
+      bhaskara();
+    });
+  </script>
 </body>
-
 </html>

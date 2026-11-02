@@ -1,0 +1,99 @@
+/* ==========================================================================
+   CUADRATICAPP - ANIMACIONES MODERNAS Y OPTIMIZADAS (GPU Accelerated)
+   Reemplaza el archivo obsoleto de 76KB por micro-animaciones fluidas
+   y compatibles hacia atrás con las clases del proyecto.
+   ========================================================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(229, 168, 35, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(229, 168, 35, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(229, 168, 35, 0);
+  }
+}
+
+/* Clases animadas de alto rendimiento */
+.animated {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animated.delay-1 { animation-delay: 0.1s; }
+.animated.delay-2 { animation-delay: 0.2s; }
+.animated.delay-3 { animation-delay: 0.3s; }
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+.slideUp {
+  animation-name: slideUp;
+}
+
+.scaleIn {
+  animation-name: scaleIn;
+}
+
+/* Compatibilidad con clases previas de Animate.css */
+.bounceIn {
+  animation-name: scaleIn;
+  animation-duration: 0.55s;
+}
+
+.bounceInLeft {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+}
+
+.bounceInUp {
+  animation-name: slideUp;
+  animation-duration: 0.5s;
+}
+
+/* Respeto a usuarios con movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
